@@ -1,0 +1,4 @@
+Marcelo,UCN,785
+Ignacio,UA,345
+Ricardo,UCN,845
+Romina,UA,650

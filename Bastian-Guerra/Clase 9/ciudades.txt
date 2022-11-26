@@ -1,0 +1,4 @@
+coquimbo,Caldera
+vallenar,la serena
+Vallenar,antofagasta
+coquimbo,la serena
