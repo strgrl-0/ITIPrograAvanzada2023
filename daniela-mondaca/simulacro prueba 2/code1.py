@@ -16,8 +16,15 @@ def add(list, elm):
     list.append(elm)
     return list.index(elm)
 
+def zAs(nStore):
+    spls=nStore.split('-')
+    zone=spls[0]; sector=spls[1]
+    return(zone, sector)
+        
+        
+    
 def ship(): 
-    date=[]; zone=[]; amt=[]
+    date=[]; zone=[]; sector=[]; amt=[]
     inStore=np.zeros([6,6]); sent=np.zeros([10,10])
 
     arch=open('recibidos.txt', 'r')
@@ -26,10 +33,16 @@ def ship():
     while rline != '':
         spl=rline.split(';')
         when=spl[0]; cInStore=spl[1]; ammt=int(spl[2])
-        add(date,when); add(zone,cInStore); add(amt,ammt)
+        zoneR, sectorR=zAs(cInStore)
+        add(date,when); add(zone,zoneR); add(sector,sectorR); add(amt,ammt)
         rline=arch.readline().strip()
-        print("Se realiza un despacho en "+cInStore+" el "+when)
-    return(date,zone,amt)
+    return(date,zone,sector,amt)
+
+datext,zonext,sectext,amtext=ship()
+
+print(datext,zonext,sectext,amtext)
+
+
 
     
 
