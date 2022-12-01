@@ -25,8 +25,6 @@ def zAs(nStore):
     
 def ship(): 
     date=[]; zone=[]; sector=[]; amt=[]
-    inStore=np.zeros([6,6]); sent=np.zeros([10,10])
-
     arch=open('recibidos.txt', 'r')
     rline=arch.readline().strip()
 
@@ -38,12 +36,28 @@ def ship():
         rline=arch.readline().strip()
     return(date,zone,sector,amt)
 
-datext,zonext,sectext,amtext=ship()
+
+
+datext,zonext,sectext,amtext=ship(); inStore=np.zeros([6,6]); sent=np.zeros([6,6])
+
+
+
+def trZ(zonetr):
+    ztN=["A","B","C","D","E","F"]
+    for i in range(len(zonext)):
+        for c in range(0,5):        
+            if ztN[c]==zonetr[i]:
+                zonetr[i]=c
+                
+        
+
+def trsmtx(date,zone,sect,amt):  
+    for s in range(len(sect)):
+        z=trZ(zone)
+        inStore[z][s]=amt
+        if inStore[z][s]>=100:
+            sv=inStore[z][s]
+            sent[z][s]=sv
 
 print(datext,zonext,sectext,amtext)
 
-
-
-    
-
-    
