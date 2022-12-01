@@ -7,6 +7,7 @@
 #import numpy
 import numpy as np
 
+#add functions
 def addifnt(list, elm):
     if not elm in list:
         list.append(elm)
@@ -16,13 +17,14 @@ def add(list, elm):
     list.append(elm)
     return list.index(elm)
 
+#zone with merged sectlor to zone and sector
 def zAs(nStore):
     spls=nStore.split('-')
     zone=spls[0]; sector=spls[1]
     return(zone, sector)
         
         
-    
+#read from text and convert to list format    
 def ship(): 
     date=[]; zone=[]; sector=[]; amt=[]
     arch=open('recibidos.txt', 'r')
@@ -38,26 +40,37 @@ def ship():
 
 
 
-datext,zonext,sectext,amtext=ship(); inStore=np.zeros([6,6]); sent=np.zeros([6,6])
+datext,zonext,sectext,amtext=ship(); inStore=np.zeros([6,6]); sentt=np.zeros([6,6])
 
 
 
-def trZ(zonetr):
+
+#sent packages to secondary array
+def snt(Wz,Ws,AWZ):
+    sentt[Wz][Ws]=sentt[Wz][Ws]+100
+    print("Se han enviado 100 paquetes a "+str(AWZ)+" - "+str(Ws))
+
+#translate letter zone to numerical index
+def trZ(zonetr,i):
     ztN=["A","B","C","D","E","F"]
-    for i in range(len(zonext)):
-        for c in range(0,5):        
-            if ztN[c]==zonetr[i]:
-                zonetr[i]=c
+    convt=0
+    for c in range(0,5):        
+        if ztN[c]==zonetr[i]:
+            convt=c
+    return(convt)
                 
-        
+#translate to main storage array
 
-def trsmtx(date,zone,sect,amt):  
-    for s in range(len(sect)):
-        z=trZ(zone)
-        inStore[z][s]=amt
+def trsmtx(zone,sector,amt,date):
+    for i in range(len(zone)):
+        print(i)
+        z=trZ(zone,i); s=int(sector[i])
+        inStore[z][s]=inStore[z][s]+amt[i]
         if inStore[z][s]>=100:
-            sv=inStore[z][s]
-            sent[z][s]=sv
+            snt(z,s,zone)
+            inStore[z][s]=inStore[z][s]-100
+            print("100 paquetes fueron despachados el "+str(date)+" hacia "+str(zone)+" - "+str(s))
 
-print(datext,zonext,sectext,amtext)
+
+trsmtx(zonext,sectext,amtext,datext)
 
