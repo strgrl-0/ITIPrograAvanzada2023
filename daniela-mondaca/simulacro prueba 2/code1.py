@@ -115,3 +115,32 @@ trsmtx(zonext,sectext,amtext,datext)
 totalcost=cost(sentt)
 print("El coste total de todos los despachos es: "+str(totalcost),'\n')
 
+
+
+
+def determineBig(pendingZ,pendingS,item):
+    tocomp=item[pendingZ][pendingS]; current=0; tcZone=str(); tcSect=str()
+    
+        
+    for col in range(6):
+        for fil in range(6):
+            current=item[col][fil]
+            tcZone=zonext[col]; tcSect=sectext[fil]
+            
+            if current>tocomp:
+                tocomp=current
+    return(tocomp, tcZone, tcSect)
+
+
+
+def pending(items):
+    for s in range(6):
+        for z in range(6):
+            if items[z][s]!=0:
+                outBIG=determineBig(z,s,items)
+    return(outBIG)
+
+mostPendingItems,Pending_Ztxt,Pending_Stxt=pending(inStore)
+print(mostPendingItems, Pending_Ztxt, Pending_Stxt); 
+
+
