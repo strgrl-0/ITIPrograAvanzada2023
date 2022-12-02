@@ -60,10 +60,18 @@ def totalsents(totalsents):
     for z in range(6):
         for s in range(6):
             if dtotal[z][s]!=0:
-                dtotal[z][s]=dtotal[z][s]
                 totalN=totalN+dtotal[z][s]
     return(totalN)
 
+def cost(shipped):
+    bySectorP=[125,325,198,635,312,185]; totalC=int()
+    for s in range(6):
+        temP=0
+        for z in range(6):
+            if shipped[z][s]!=0:
+                temP=temP+shipped[z][s]*bySectorP[s]
+        totalC=totalC+temP
+    return(totalC)
 
 
 
@@ -92,7 +100,7 @@ def trsmtx(zone,sector,amt,date):
     totalN=int(totalsents(sentt)); totalN=totalN*100
     print("Se envio un total de "+str(totalN)+" paquetes durante este mes",'\n')
     print("Los paquetes fueron despachados a las direcciones que se muestran a continuación",'\n')
-    print(sentt)
+    print(sentt,'\n')
 
 
         
@@ -104,4 +112,6 @@ def trsmtx(zone,sector,amt,date):
 
  
 trsmtx(zonext,sectext,amtext,datext)
+totalcost=cost(sentt)
+print("El coste total de todos los despachos es: "+str(totalcost),'\n')
 
