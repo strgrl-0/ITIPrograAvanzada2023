@@ -102,32 +102,35 @@ def trsmtx(zone,sector,amt,date):
     print("Los paquetes fueron despachados a las direcciones que se muestran a continuación",'\n')
     print(sentt,'\n')
 
-
-        
-'''debug line begin
-        print(i, z, str(sector[i])+'\n')
-        print(inStore, '\n')
-        #debug line ends'''
-
-
  
 trsmtx(zonext,sectext,amtext,datext)
 totalcost=cost(sentt)
 print("El coste total de todos los despachos es: "+str(totalcost),'\n')
 
 
+def indextozone_indextosect(zone_in,sect_in):
+    toZone=["A","B","C","D","E","F"]; zone=str(); zone_in=zone_in+1
+    sect=str(sect_in)
+    for i in range(6):
+        if i==zone_in:
+            zone=toZone[i]
+    index=str()
+    index=str(zone+" - "+sect)
+    return(index)
+        
+    
 
 
 def determineBig(pendingZ,pendingS,item):
-    tocomp=item[pendingZ][pendingS]; current=0
-    
-        
+    tocomp=item[pendingZ][pendingS]; current=0; index=str()
     for col in range(6):
         for fil in range(6):
             current=item[col][fil]
             if current>tocomp:
                 tocomp=current
-    return(tocomp)
+                index=indextozone_indextosect(fil,col)
+                
+    return(tocomp,index)
 
 
 
@@ -138,7 +141,8 @@ def pending(items):
                 outBIG=determineBig(z,s,items)
     return(outBIG)
 
-mostPendingItems=pending(inStore)
-print(mostPendingItems); 
+mostPendingItems, index=pending(inStore)
+print("Las ubicaciones con la mayor cantidad de items pendientes son:"+'\n')
+print(index+" con "+str(mostPendingItems),'\n'); 
 
 
