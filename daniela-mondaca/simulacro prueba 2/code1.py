@@ -119,17 +119,15 @@ print("El coste total de todos los despachos es: "+str(totalcost),'\n')
 
 
 def determineBig(pendingZ,pendingS,item):
-    tocomp=item[pendingZ][pendingS]; current=0; tcZone=str(); tcSect=str()
+    tocomp=item[pendingZ][pendingS]; current=0
     
         
     for col in range(6):
         for fil in range(6):
             current=item[col][fil]
-            tcZone=zonext[col]; tcSect=sectext[fil]
-            
             if current>tocomp:
                 tocomp=current
-    return(tocomp, tcZone, tcSect)
+    return(tocomp)
 
 
 
@@ -140,7 +138,7 @@ def pending(items):
                 outBIG=determineBig(z,s,items)
     return(outBIG)
 
-mostPendingItems,Pending_Ztxt,Pending_Stxt=pending(inStore)
-print(mostPendingItems, Pending_Ztxt, Pending_Stxt); 
+mostPendingItems=pending(inStore)
+print(mostPendingItems); 
 
 
