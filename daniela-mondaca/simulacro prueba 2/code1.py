@@ -49,9 +49,9 @@ datext,zonext,sectext,amtext=ship(); inStore=np.zeros([6,6]); sentt=np.zeros([6,
 
 
 #sent packages to secondary array (part of req 2)
-def snt(Wz,Ws,AWZ,i):
+def snt(Wz,Ws,textZ,i):
     sentt[Wz][Ws]=sentt[Wz][Ws]+1
-    print("Se han despachado 100 paquetes a "+str(AWZ[i])+" - "+str(Ws+1),'\n')
+    print("Se han despachado 100 paquetes a "+str(textZ[i])+" - "+str(Ws+1),'\n')
 
 #total sents calculation (part of req 2)
 def totalsents(totalsents):
