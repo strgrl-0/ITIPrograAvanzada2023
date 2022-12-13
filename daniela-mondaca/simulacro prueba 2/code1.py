@@ -145,4 +145,7 @@ mostPendingItems, index=pending(inStore)
 print("Las ubicaciones con la mayor cantidad de items pendientes son:"+'\n')
 print(index+" con "+str(mostPendingItems),'\n'); 
 
+def pendientes_despacho():
+    
+
 
