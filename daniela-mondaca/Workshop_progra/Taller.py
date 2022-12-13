@@ -38,22 +38,15 @@ print (JuegoNID, '\n', kda,'\n', PlayerNT,'\n')  #debug line for testing
 
 def KDAdataF(Game,KDA,Plist):
     KDAdata=np.zeros([4,10])
-
-
-KDAdata=KDAdataF(JuegoNID,kda,PlayerNT)
-print(KDAdata)
-
-
-'''
     countG=0; countK=0
-    for i in range(len(Plist)):
-        if Plist[i]=="PABLO":
-            for f in range(len(Plist)):            #Counts need a littler more thinking
-                for cG in range(0,10,2):
+    for f in range(len(Plist)):            #Counts need a littler more thinking
+                for cG in range(0,10,2):            #possible approach, reorder items after the matrix placement
                     KDAdata[f][cG]=Game[countG]
                     countG+=1
                 for cK in range(1,10,2):
                     KDAdata[f][cK]=KDA[countK]
                     countK+=1
     return(KDAdata)
-'''
+
+KDAdata=KDAdataF(JuegoNID,kda,PlayerNT)
+print(KDAdata)
