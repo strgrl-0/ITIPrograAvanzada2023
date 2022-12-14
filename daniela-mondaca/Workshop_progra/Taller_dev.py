@@ -61,7 +61,42 @@ def KDAdataF(Game,KDA,Plist):
                     countP+=1
     return(KDAdata)
 
-def PDataF():
+def PDataF(Juego,PlayerNT,Player):
+    PData=np.zeros([4,4]); tmMain=[]
+    Juegos=["LOL","VALORANT","OVERWATCH"]
+    for f in range(4):
+        for j in range(len(Juegos)):
+            for i in range(len(Juego)):
+                if Juego[i]==Juegos[j] and Player[i]==PlayerNT[f]:
+                    PData[j][f]+=1
+    for c in range(4):
+        PData[3][c]=PData[0][c]+PData[1][c]+PData[2][c]
+    return PData
+
+
 
 KDAdata=KDAdataF(JuegoNID,kda,PlayerID)
-print(KDAdata)
+print(KDAdata, '\n')
+
+Mtest=PDataF(Juego,PlayerNT,Player)
+print(Mtest)
+
+
+
+
+'''
+
+def PDataF(Juego,PlayerNT,Player):
+    PData=np.zeros([4,4]); tmMain=[]
+    Juegos=["LOL","VALORANT","OVERWATCH"]
+    
+    for j in range(len(Juegos)):
+        cont=0
+        for i in range(len(Juego)):
+            if Juego[i]==Juegos[j] and Player[i]==PlayerNT[0]:
+                cont+=1
+        add(tmMain,cont)
+    return tmMain
+
+
+'''
