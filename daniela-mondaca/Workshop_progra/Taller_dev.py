@@ -82,7 +82,8 @@ Mtest=PDataF(Juego,PlayerNT,Player)
 print(Mtest)
 
 
-
+for c in
+    for f in
 
 '''
 
