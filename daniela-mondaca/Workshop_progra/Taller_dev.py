@@ -16,11 +16,19 @@ def getKDA(kda):        #KDA calculation
     kdaP=round((k+a)/d,1)
     return kdaP
 
-def ggID(juegoS):
+def ggIDLista(juegoS):
     games=["LOL","VALORANT","OVERWATCH"]
     for i in range(3):
         if juegoS == games[i]:
             ret=i
+    return ret
+
+def ggID(Juegos):
+    games=["LOL","VALORANT","OVERWATCH"]; ret=[]
+    for i in range(3):
+        for j in range(3):
+            if Juegos[i]==games[j]:
+                add(ret,j)
     return ret
 
 def playerID(playerS):
@@ -29,28 +37,36 @@ def playerID(playerS):
         if playerS == jugadores[i]:
             ret=i
     return ret
+
+def playertoID(PlayerNT):
+    jugadores=["PABLO","JOSE","ALFONSO","JUAN"]; ret=[]
+    for j in range(4):
+        for i in range(4):
+            if PlayerNT[j] == jugadores[i]:
+                add(ret,i)
+    return ret
                                 
         
     
 
 arch=open("partidas.txt","r") #File reading and storage into lists
 line=arch.readline().strip()
-Juego=[]; JuegoNID=[]; Resultado=[]; kda=[]; TipoMatch=[]; Player=[]; PlayerNT=[]; PlayerID=[]
+Juego=[]; JuegoListaNID=[]; JuegoNT=[]; Resultado=[]; kda=[]; TipoMatch=[]; Player=[]; PlayerNT=[]; PlayerID=[]     #order lists, they're getting complex and descriptions are required
 while line != "":
     splt=line.split(",")
     juegoS=splt[0]; ResultadoS=splt[1]; kdaS=splt[2]; TipoMatchS=splt[3]; PlayerS=splt[4]
-    kdaP=getKDA(kdaS); gID=ggID(juegoS); pID=playerID(PlayerS)
-    add(Juego,juegoS); add(JuegoNID,gID); add(Resultado,ResultadoS); add(kda,kdaP); add(TipoMatch, TipoMatchS); add(Player, PlayerS); addifnt(PlayerNT,PlayerS); add(PlayerID, pID)
+    kdaP=getKDA(kdaS); gID=ggIDLista(juegoS); pID=playerID(PlayerS)
+    add(Juego,juegoS); add(JuegoListaNID,gID); addifnt(JuegoNT,juegoS); add(Resultado,ResultadoS); add(kda,kdaP); add(TipoMatch, TipoMatchS); add(Player, PlayerS); addifnt(PlayerNT,PlayerS); add(PlayerID, pID)
     line=arch.readline().strip()
 
-print (JuegoNID, '\n', kda,'\n', PlayerNT,'\n')  #debug line for testing
+print (JuegoListaNID, '\n', kda,'\n', PlayerNT,'\n')  #debug line for testing
 
 
 def KDAdataF(Game,KDA,Plist):
     KDAdata=np.zeros([14,15])
     countG=0; countK=0; countP=0
     for f in range(14):            #Counts need a littler more thinking
-                for cG in range(0,15,3):            #possible approach, reorder items after the matrix placement
+                for cG in range(0,15,3):              #approach: sequential order, store Game/KDA/Player. a set of data = all 3 pieces
                     KDAdata[f][cG]=Game[countG]
                     countG+=1
                 for cK in range(1,15,3):
@@ -62,7 +78,7 @@ def KDAdataF(Game,KDA,Plist):
     return(KDAdata)
 
 def PDataF(Juego,PlayerNT,Player):
-    PData=np.zeros([4,4]); tmMain=[]
+    PData=np.zeros([5,4])
     Juegos=["LOL","VALORANT","OVERWATCH"]
     for f in range(4):
         for j in range(len(Juegos)):
@@ -71,19 +87,65 @@ def PDataF(Juego,PlayerNT,Player):
                     PData[j][f]+=1
     for c in range(4):
         PData[3][c]=PData[0][c]+PData[1][c]+PData[2][c]
+        PIDs=playertoID(PlayerNT)
+        PData[4][c]=PIDs[c]
     return PData
 
 
 
-KDAdata=KDAdataF(JuegoNID,kda,PlayerID)
+KDAdata=KDAdataF(JuegoListaNID,kda,PlayerID)
 print(KDAdata, '\n')
 
-Mtest=PDataF(Juego,PlayerNT,Player)
-print(Mtest)
+PData=PDataF(Juego,PlayerNT,Player)
+print(PData)
 
 
-for c in
-    for f in
+print("---------Funcion 1-----------")
+playedWhat=["LOL","VALORANT","OVERWATCH"]
+for f in range(3):
+    max=int(PData[f][0]); JugadorST=PlayerNT[0]
+    for c in range(4):
+        if max<PData[f][c]:
+            max=int(PData[f][c])
+            JugadorST=PlayerNT[c]
+
+    print("El jugador que más jugó ",playedWhat[f]," fue ",JugadorST," con ",max," horas registradas")
+
+
+#FUNC 2 - Juego más jugado entre los 4
+Tmax=np.zeros([1,3])
+for c in range(3):
+    for f in range(4):
+        Tmax[0][c]=Tmax[0][c]+PData[c][f]
+
+mat=np.zeros([2,3])
+for j in range(3):
+    mat[0][j]=Tmax[0][j]; gID=ggID(JuegoNT)
+    mat[1][j]=gID[j]
+
+max=mat[0][0]; max1=mat[1][0]; a=int(0)
+
+for i in range(3):
+    if max>a:
+        max=mat[0][i]
+        max1=mat[1][i]
+    else:
+        max=a
+
+for i in range(3):
+
+print(mat, max,max1)
+
+
+
+
+
+
+
+
+
+
+
 
 '''
 
