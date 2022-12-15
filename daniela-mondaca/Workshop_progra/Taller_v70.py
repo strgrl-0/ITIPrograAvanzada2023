@@ -4,7 +4,7 @@ def add(list,elm):          #add function
     list.append(elm)
     return list.index(elm)
 
-def addifnt(list, elm):
+def addifnt(list, elm):         #add if not there
     if elm not in list:
         list.append(elm)
     return list.index(elm)
@@ -16,7 +16,7 @@ def getKDA(kda):        #KDA calculation
     kdaP=round((k+a)/d,1)
     return kdaP
 
-def ggIDLista(juegoS):
+def ggIDLista(juegoS):     
     games=["LOL","VALORANT","OVERWATCH"]
     for i in range(3):
         if juegoS == games[i]:
@@ -108,17 +108,12 @@ def PDataF(Juego,PlayerNT,Player):
         PIDs=playertoID(PlayerNT)
         PData[4][c]=PIDs[c]
     return PData
-
-
-
 KDAdata=KDAdataF(JuegoListaNID,kda,PlayerID)
-print(KDAdata, '\n')
-
 PData=PDataF(Juego,PlayerNT,Player)
-print(PData)
 
 
-print("---------Funcion 1-----------")
+#PREGUNTA 1 - Jugador que mas jugo a un juego en especifico
+print("---------Pregunta 1-----------")
 playedWhat=["LOL","VALORANT","OVERWATCH"]
 for f in range(3):
     max=int(PData[f][0]); JugadorST=PlayerNT[0]
@@ -127,10 +122,10 @@ for f in range(3):
             max=int(PData[f][c])
             JugadorST=PlayerNT[c]
 
-    print("El jugador que más jugó ",playedWhat[f]," fue ",JugadorST," con ",max," horas registradas")
+    print("El jugador que más jugó ",playedWhat[f]," fue ",JugadorST," con ",max," partidas registradas")
 
 
-#FUNC 2 - Juego más jugado entre los 4
+#PREGUNTA 2 - Juego más jugado entre los 4
 Tmax=np.zeros([1,3])
 for c in range(3):
     for f in range(4):
@@ -158,12 +153,12 @@ def retMPlayed(MasJugadoProc):
         
 Mplayed=retMPlayed(max1)
 print('\n')
-print("--------------Funcion 2-------------")
-print("El juego más jugado fue ",Mplayed,"con ",max," horas en total")
+print("--------------Pregunta 2-------------")
+print("El juego más jugado fue ",Mplayed,"con ",max," partidas en total")
 
-#Take Average KDA 
+#Pregunta 3 - KDA Promedio GRAL
 def avgKDA(array):
-    totalKDA=0;  TtT=0              #fix ltr
+    totalKDA=0;  TtT=0              
     for i in range(14):
         for j in range(1,15,3):
             totalKDA=array[i][j]
@@ -171,23 +166,63 @@ def avgKDA(array):
     totalKDA=totalKDA/TtT
     return totalKDA
 
-TtT=avgKDA(PData)
-print(TtT)
+IndiferentGralKDA=avgKDA(KDAdata)
+print('\n'); print("----------------------Pregunta 3--------------")
+print("El KDA general, considerando todas las partidas, indiferente de juego o jugador es: ", IndiferentGralKDA)
 
 
-'''
+#Pregunta 4 - Mejor KDA por juego
+def scanKDAaG(KDAarray,gameNamesID):
+    single=np.zeros([3,5]);         cont=[0,0,0]; cK=0      #MY FUCKING GOD THIS SHIT WAS SO HARD
 
-def PDataF(Juego,PlayerNT,Player):
-    PData=np.zeros([4,4]); tmMain=[]
-    Juegos=["LOL","VALORANT","OVERWATCH"]
-    
-    for j in range(len(Juegos)):
-        cont=0
-        for i in range(len(Juego)):
-            if Juego[i]==Juegos[j] and Player[i]==PlayerNT[0]:
-                cont+=1
-        add(tmMain,cont)
-    return tmMain
+    for f in range(14):
+        for cG in range(0,15,3):
+            cK=cG+1
+            for i in range(3):
+                    if gameNamesID[0][i]==KDAarray[f][cG]:
+                        single[i][cont[i]]=KDAarray[f][cK]
+                        if cont[i]<=3:
+                            cont[i]+=1
+                        else:
+                            break
+    return single
+                                               #procesamiento. encontrar el kda más alto en cada juego
+def encontrarMejor(first5Array,gameNTID):
+    best=np.zeros([2,3]); 
+    for f in range(3):
+        firstV=first5Array[f][0]
+        best[0][f]=firstV; best[1][f]=gameNTID[0][f]
+        for c in range(5):
+            current=first5Array[f][c]
+            if firstV<current:
+                best[0][f]=current
+
+    return best
 
 
-'''
+KDAscanned=scanKDAaG(KDAdata,JuegoNTNID); best=encontrarMejor(KDAscanned,JuegoNTNID)    #Salida. Conversion Ids a string y procesamiento output
+
+def gameIDNTtoStr(first5array,gamestr,gameID,mejor):
+    print("\n")
+    print("-----------Pregunta 4------------")
+    print("Los mejores KDA son los siguientes")
+    print('\n')
+    for comp in range(3):
+        for c in range(3):
+            if first5array[1][comp]==gameID[0][c]:
+                print("En", gamestr[c],":",mejor[0][c])
+                
+gameIDNTtoStr(best,JuegoNT,JuegoNTNID,best)
+
+
+#Pregunta 5 - Cantidad total de partidas jugadas
+
+def totalMatches(matchesArr):
+    total=0
+    for i in range(4):
+        total=total+matchesArr[3][i]
+    return(total)
+
+matchesTot=totalMatches(PData)
+print('\n'); print("----------------Pregunta 5---------------")
+print("La cantidad total de partidas jugadas es: ", matchesTot)
