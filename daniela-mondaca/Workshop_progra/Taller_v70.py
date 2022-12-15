@@ -16,7 +16,8 @@ def getKDA(kda):        #KDA calculation
     kdaP=round((k+a)/d,1)
     return kdaP
 
-def ggIDLista(juegoS,Juegoflt,index):     #convierte la lista completa de elementos a indices numericos (contrasta Juego con JuegoNT, la lista sin repetición y devuelve un valor numerico de ello)
+def ggIDLista(juegoS,Juegoflt,index):   
+    ret=0    #!!!!!!!!!!!!!!1                               #convierte la lista completa de elementos a indices numericos (contrasta Juego con JuegoNT, la lista sin repetición y devuelve un valor numerico de ello)
     for j in range(3):
         if juegoS[index] == Juegoflt[j]:
             ret=j
@@ -32,6 +33,7 @@ def ggID(JuegoNT):                       #convierte la lista de juegos sin repet
     return ret
 
 def playerID(playerS,Playerflt,index):  #convierte la lista completa de elementos a indices numericos (contrasta Player con PlayerNT, la lista sin repeticion y devuelve un valor numerico de ello)
+    ret=0 #!!!!!!!!!
     for i in range(4):
         if playerS[index] == Playerflt[i]:
             ret=i
@@ -49,7 +51,7 @@ def playertoID(PlayerNT):               #convierte la lista de juegadores sin re
         
     
 
-arch=open("partidas.txt","r") #File reading and storage into lists
+arch=open("partidas2.txt","r") #File reading and storage into lists
 line=arch.readline().strip()
 
 Juego=[]; JuegoListaNID=[]; JuegoNT=[] #Juego:Todos los juegos del archivo, en orden secuencial y formato str
@@ -73,7 +75,6 @@ while line != "":
     add(Resultado,ResultadoS); add(kda,kdaP); add(TipoMatch, TipoMatchS); #Guardado de los resultados, guardado del kda en base a el procesamiento de arriba, guardado del tipo de partida
     add(Player, PlayerS); addifnt(PlayerNT,PlayerS)    #Guardado de los jugadores en orden de aparición, guardado de los jugadores en orden de aparición sin repetirse
     line=arch.readline().strip()
-
 
 
 for i in range(len(Juego)):
@@ -219,6 +220,7 @@ gameIDNTtoStr(best,JuegoNT,JuegoNTNID,best)
 
 def totalMatches(matchesArr):                   #otro simplecito suma las partidas totales, indiferente de juego o jugador (las totales estaban almacenadas por jugador en la matriz PData, came
     total=0                                     #in handy)
+    print(matchesArr) #debug
     for i in range(4):
         total=total+matchesArr[3][i]
     return(total)
@@ -226,3 +228,18 @@ def totalMatches(matchesArr):                   #otro simplecito suma las partid
 matchesTot=totalMatches(PData)                  #Muestra datos
 print('\n'); print("----------------Pregunta 5---------------")
 print("La cantidad total de partidas jugadas es: ", matchesTot)
+
+
+
+'''
+USE THIS THING FOR DEBUGGING LISTS,no olvidar cambiar el rango en concordancia con lo que se está evaluando
+
+contdot=0
+for i in range(4):
+    for j in range(70):
+        if PlayerNT[i] == Player[j]:
+            contdot+=1
+print(contdot)
+
+
+'''
