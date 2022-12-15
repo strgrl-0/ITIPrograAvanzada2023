@@ -51,15 +51,33 @@ def playertoID(PlayerNT):
 
 arch=open("partidas.txt","r") #File reading and storage into lists
 line=arch.readline().strip()
-Juego=[]; JuegoListaNID=[]; JuegoNT=[]; Resultado=[]; kda=[]; TipoMatch=[]; Player=[]; PlayerNT=[]; PlayerID=[]     #order lists, they're getting complex and descriptions are required
+
+Juego=[]; JuegoListaNID=[]; JuegoNT=[] #Juego:Todos los juegos del archivo, en orden secuencial y formato str
+JuegoNTNID=[]                          #JuegoListaNID: Todos los juegos del archivo, en orden secuencial y formato int
+                                        #JuegoNT: Lista de juegos en el archivo sin repetición, en orden de aparición y formato str
+                                        
+Resultado=[]; kda=[]; TipoMatch=[]      #Resultado: Resultado de las partidas, en orden secuencial y formato str
+                                        #kda: Kda(procesado) de las partidas, en orden secuencial y formato int
+                                        #TipoMatch:Si una partida es clasificatoria o normal, en formato str
+                                        
+Player=[]; PlayerNT=[]; PlayerID=[]     #Player:Lista de jugadores que aparecen en el archivo, orden secuencial, sin filtro, str
+                                        #PlayerNT: Lista de jugadores que aparecen en el archivo sin repetirse, orden secuencial, str
+                                        #PlayerID: Lista de jugadores que aparecen en el archivo, secuencial, int   
 while line != "":
-    splt=line.split(",")
+    splt=line.split(",")                #order lists, they're getting complex and descriptions are required
     juegoS=splt[0]; ResultadoS=splt[1]; kdaS=splt[2]; TipoMatchS=splt[3]; PlayerS=splt[4]
+    
     kdaP=getKDA(kdaS); gID=ggIDLista(juegoS); pID=playerID(PlayerS)
-    add(Juego,juegoS); add(JuegoListaNID,gID); addifnt(JuegoNT,juegoS); add(Resultado,ResultadoS); add(kda,kdaP); add(TipoMatch, TipoMatchS); add(Player, PlayerS); addifnt(PlayerNT,PlayerS); add(PlayerID, pID)
+    
+    add(Juego,juegoS); add(JuegoListaNID,gID); addifnt(JuegoNT,juegoS) 
+    add(Resultado,ResultadoS); add(kda,kdaP); add(TipoMatch, TipoMatchS); 
+    add(Player, PlayerS); addifnt(PlayerNT,PlayerS); add(PlayerID, pID)
+    
     line=arch.readline().strip()
 
-print (JuegoListaNID, '\n', kda,'\n', PlayerNT,'\n')  #debug line for testing
+gIDNT=ggID(JuegoNT)
+addifnt(JuegoNTNID,gIDNT)
+
 
 
 def KDAdataF(Game,KDA,Plist):
@@ -131,20 +149,30 @@ for i in range(3):
         max1=mat[1][i]
     else:
         max=a
+        
+def retMPlayed(MasJugadoProc):
+    for i in range(3):
+        if MasJugadoProc==JuegoNTNID[0][i]:
+            ret=JuegoNT[i]
+    return ret
+        
+Mplayed=retMPlayed(max1)
+print('\n')
+print("--------------Funcion 2-------------")
+print("El juego más jugado fue ",Mplayed,"con ",max," horas en total")
 
-for i in range(3):
+#Take Average KDA 
+def avgKDA(array):
+    totalKDA=0;  TtT=0              #fix ltr
+    for i in range(14):
+        for j in range(1,15,3):
+            totalKDA=array[i][j]
+            TtT=+1
+    totalKDA=totalKDA/TtT
+    return totalKDA
 
-print(mat, max,max1)
-
-
-
-
-
-
-
-
-
-
+TtT=avgKDA(PData)
+print(TtT)
 
 
 '''
