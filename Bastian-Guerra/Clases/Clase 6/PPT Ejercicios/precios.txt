@@ -1,6 +1,0 @@
-Zanahoria,100
-Cebolla,1200
-Tomate,800
-Papas,500
-Lechuga,300
-Betarraga,500
