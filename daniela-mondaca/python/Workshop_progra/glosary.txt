@@ -1,0 +1,12 @@
+sequential Game/KDa/Player in num values
+
+game index              [14,15]
+    0 = LOL             countG, countK, countP
+    1 = VALORANT        0,15,3  1,15,3  2,15,3
+    2 = OVERWATCH
+
+Player index
+    0 = PABLO   
+    1 = JOSE
+    2 = ALFONSO
+    3 = JUAN
