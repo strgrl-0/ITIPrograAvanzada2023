@@ -26,6 +26,16 @@ IDCiudadA1=[]; IDCiudadA2=[]
 
 IDCiudadB1=[]; IDCiudadB2=[]
 
+#-Ciudad connections
+IDCiudadAs=[IDCiudadA1,IDCiudadA2]; IDCiudadBs=[IDCiudadB1,IDCiudadB2]
+
+CiudadAs=[CiudadA1,CiudadA2]; CiudadBs=[CiudadB1,CiudadB2]
+
+def toNUMid(dict,input,output):
+    for i in range(len(dict)):
+        for j in range(len(input)):
+            if dict[i]==input[j]:
+                add(output,i)
 
 for i in range (2):
     files=["dist.txt","query.txt"]
@@ -39,6 +49,11 @@ for i in range (2):
         #cities1[i]=spl[0]; cities2[i]=spl[1]; qorDST[i]=spl[2]
         add(cities1[i],spl[0]); add(cities2[i],spl[1]); add(qorDST[i],spl[2]); addifnt(CiudadFTOT,spl[i])
         readline=arch.readline().strip()
+    
+#to NUM
+for i in range(2):
+    toNUMid(CiudadFTOT,CiudadAs[i],IDCiudadAs[i])
+    toNUMid(CiudadFTOT,CiudadBs[i],IDCiudadBs[i])
 
 #toArr
 Arr0=np.zeros([3,len(CiudadA1)])
@@ -55,3 +70,5 @@ for i in range(2):
 
 print(Arr0,'\n','\n',Arr1)
 print(CiudadFTOT)
+print(IDCiudadAs,IDCiudadBs)
+print(CiudadAs,CiudadBs)
