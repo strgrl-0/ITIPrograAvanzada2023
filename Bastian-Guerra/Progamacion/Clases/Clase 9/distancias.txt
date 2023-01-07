@@ -1,5 +1,0 @@
-coquimbo,la serena,15
-la serena,vallenar,300
-vallenar,copiapo,200
-Copiapo,caldera,100
-coquimbo,los vilos,300

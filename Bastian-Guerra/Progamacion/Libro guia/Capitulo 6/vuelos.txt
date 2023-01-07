@@ -1,5 +1,0 @@
-Santiago,PuntoArenas,45
-Concepción,PuertoMontt,43
-LaSerena,Antofagasta,144
-Antofagasta,Santiago,123
-Copiapo,Santiago,504

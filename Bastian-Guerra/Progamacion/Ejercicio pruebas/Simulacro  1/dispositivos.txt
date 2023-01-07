@@ -1,6 +1,0 @@
-4,Negro,Rojo,Verde,Amarillo
-5,Amarillo,Amarillo,Rojo,Negro,Azul
-3,Blanco,Blanco,Blanco
-3,Azul,Azul,Negro
-5,Verde,Verde,Verde,Verde,Verde
-4,Rojo,Rojo,Rojo,Amarillo

@@ -1,6 +1,0 @@
-Tomate,20
-Zanahoria,15
-Cebolla,10
-Papas,35
-Lechuga,10
-Betarraga,15
