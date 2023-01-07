@@ -1,0 +1,11 @@
+2
+sucursal1,5
+jugo en polvo,9,110
+azucar,1,1100
+arroz,1,700
+harina,2,800
+chocolate,1,500
+sucursal2,3
+arroz,2,800
+fideos,2,900
+café,1,3700

@@ -1,0 +1,180 @@
+Netflix-Enero-7031
+Amazon Prime-Enero-1630
+Star+-Enero-9227
+Disney+-Enero-3390
+Hbo Max-Enero-5241
+Apple TV-Enero-1337
+Paramount +-Enero-9227
+Hbo Go-Enero-6006
+Mubi-Enero-3606
+Starzplay-Enero-3987
+Qubit Tv-Enero-1232
+Acorn TV-Enero-1968
+Tnt Stadio-Enero-6274
+Crunchyroll-Enero-2648
+Funimation-Enero-2028
+Netflix-Febrero-9790
+Amazon Prime-Febrero-4480
+Star+-Febrero-6371
+Disney+-Febrero-6240
+Hbo Max-Febrero-6448
+Apple TV-Febrero-3495
+Paramount +-Febrero-8980
+Hbo Go-Febrero-3835
+Mubi-Febrero-882
+Starzplay-Febrero-2572
+Qubit Tv-Febrero-1580
+Acorn TV-Febrero-345
+Tnt Stadio-Febrero-4347
+Crunchyroll-Febrero-4551
+Funimation-Febrero-1214
+Netflix-Marzo-4141
+Amazon Prime-Marzo-9279
+Star+-Marzo-6046
+Disney+-Marzo-9151
+Hbo Max-Marzo-2727
+Apple TV-Marzo-978
+Paramount +-Marzo-5647
+Hbo Go-Marzo-7145
+Mubi-Marzo-1406
+Starzplay-Marzo-7234
+Qubit Tv-Marzo-1318
+Acorn TV-Marzo-3000
+Tnt Stadio-Marzo-6109
+Crunchyroll-Marzo-8085
+Funimation-Marzo-4218
+Netflix-Abril-6892
+Amazon Prime-Abril-2899
+Star+-Abril-5944
+Disney+-Abril-3464
+Hbo Max-Abril-5035
+Apple TV-Abril-2689
+Paramount +-Abril-4400
+Hbo Go-Abril-3505
+Mubi-Abril-7323
+Starzplay-Abril-2780
+Qubit Tv-Abril-3682
+Acorn TV-Abril-4311
+Tnt Stadio-Abril-6700
+Crunchyroll-Abril-2601
+Funimation-Abril-8822
+Netflix-Mayo-300
+Amazon Prime-Mayo-6500
+Star+-Mayo-6030
+Disney+-Mayo-7684
+Hbo Max-Mayo-7796
+Apple TV-Mayo-6970
+Paramount +-Mayo-9194
+Hbo Go-Mayo-641
+Mubi-Mayo-3111
+Starzplay-Mayo-8261
+Qubit Tv-Mayo-2381
+Acorn TV-Mayo-5721
+Tnt Stadio-Mayo-8491
+Crunchyroll-Mayo-4953
+Funimation-Mayo-3481
+Netflix-Junio-3154
+Amazon Prime-Junio-9241
+Star+-Junio-9765
+Disney+-Junio-1537
+Hbo Max-Junio-9734
+Apple TV-Junio-3053
+Paramount +-Junio-7131
+Hbo Go-Junio-2366
+Mubi-Junio-1926
+Starzplay-Junio-7528
+Qubit Tv-Junio-2795
+Acorn TV-Junio-7158
+Tnt Stadio-Junio-2248
+Crunchyroll-Junio-2123
+Funimation-Junio-4545
+Netflix-Julio-9439
+Amazon Prime-Julio-8945
+Star+-Julio-8823
+Disney+-Julio-7705
+Hbo Max-Julio-6811
+Apple TV-Julio-2905
+Paramount +-Julio-7280
+Hbo Go-Julio-4313
+Mubi-Julio-9361
+Starzplay-Julio-782
+Qubit Tv-Julio-4600
+Acorn TV-Julio-4177
+Tnt Stadio-Julio-5450
+Crunchyroll-Julio-5679
+Funimation-Julio-2355
+Netflix-Agosto-5200
+Amazon Prime-Agosto-4874
+Star+-Agosto-8278
+Disney+-Agosto-9741
+Hbo Max-Agosto-2224
+Apple TV-Agosto-4001
+Paramount +-Agosto-4419
+Hbo Go-Agosto-3858
+Mubi-Agosto-4893
+Starzplay-Agosto-2861
+Qubit Tv-Agosto-6927
+Acorn TV-Agosto-4341
+Tnt Stadio-Agosto-8408
+Crunchyroll-Agosto-1017
+Funimation-Agosto-6789
+Netflix-Septiembre-2513
+Amazon Prime-Septiembre-638
+Star+-Septiembre-5160
+Disney+-Septiembre-2000
+Hbo Max-Septiembre-4944
+Apple TV-Septiembre-7939
+Paramount +-Septiembre-2910
+Hbo Go-Septiembre-8422
+Mubi-Septiembre-2686
+Starzplay-Septiembre-7187
+Qubit Tv-Septiembre-5986
+Acorn TV-Septiembre-2336
+Tnt Stadio-Septiembre-733
+Crunchyroll-Septiembre-1077
+Funimation-Septiembre-4497
+Netflix-Octubre-9866
+Amazon Prime-Octubre-9863
+Star+-Octubre-5487
+Disney+-Octubre-4789
+Hbo Max-Octubre-8567
+Apple TV-Octubre-9007
+Paramount +-Octubre-9652
+Hbo Go-Octubre-6695
+Mubi-Octubre-2035
+Starzplay-Octubre-5239
+Qubit Tv-Octubre-5300
+Acorn TV-Octubre-2516
+Tnt Stadio-Octubre-5586
+Crunchyroll-Octubre-2145
+Funimation-Octubre-7815
+Netflix-Noviembre-5000
+Amazon Prime-Noviembre-6008
+Star+-Noviembre-9990
+Disney+-Noviembre-1172
+Hbo Max-Noviembre-8068
+Apple TV-Noviembre-6425
+Paramount +-Noviembre-3861
+Hbo Go-Noviembre-6425
+Mubi-Noviembre-8248
+Starzplay-Noviembre-1579
+Qubit Tv-Noviembre-7083
+Acorn TV-Noviembre-2466
+Tnt Stadio-Noviembre-4110
+Crunchyroll-Noviembre-2334
+Funimation-Noviembre-9057
+Netflix-Diciembre-8706
+Amazon Prime-Diciembre-6462
+Star+-Diciembre-4161
+Disney+-Diciembre-541
+Hbo Max-Diciembre-6472
+Apple TV-Diciembre-4541
+Paramount +-Diciembre-3645
+Hbo Go-Diciembre-9387
+Mubi-Diciembre-5044
+Starzplay-Diciembre-2874
+Qubit Tv-Diciembre-2478
+Acorn TV-Diciembre-6000
+Tnt Stadio-Diciembre-2200
+Crunchyroll-Diciembre-7126
+Funimation-Diciembre-2066

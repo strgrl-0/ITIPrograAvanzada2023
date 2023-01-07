@@ -1,0 +1,17 @@
+Joaquín;60;0.67
+Mauricio;75;0.87
+Cristina;76;0.94
+Antonia;86;0.86
+María;45;0.55
+Alberto;20;0.4
+Juan;34;0.75
+Rosario;45;0.45
+Lorena;21;0.22
+Leonor;35;0.45
+Roberto;96;0.84
+Cristobal;52;0.65
+María José;80;0.4
+Francisco;85;0.65
+Camila;48;0.7
+Orlando;90;0.94
+Fernanda;50;0.4

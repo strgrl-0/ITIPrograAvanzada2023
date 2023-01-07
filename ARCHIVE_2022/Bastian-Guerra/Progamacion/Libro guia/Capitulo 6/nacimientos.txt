@@ -1,0 +1,4 @@
+Marcelo,PuntaArenas,1991
+Guillermo,Arica,1979
+Diego,Antofagasta,1980
+Mauricio,Calama,1981

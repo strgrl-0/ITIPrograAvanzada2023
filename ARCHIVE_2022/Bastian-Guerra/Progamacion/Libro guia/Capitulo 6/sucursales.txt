@@ -1,0 +1,13 @@
+Santiago,3
+Maria,23
+Pedro,45
+Ricardo,65
+Valdivia,2
+Sara,24
+Sebastián,21
+LaSerena,5
+Álvaro,19
+Teresa,34
+Guillermo,56
+Sofía,29
+Mónica,33
