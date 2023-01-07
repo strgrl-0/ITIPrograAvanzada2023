@@ -1,5 +1,0 @@
-coquimbo,caldera,0
-vallenar,la serena,1
-vallenar,antofagasta,2
-coquimbo,la serena,1
-
