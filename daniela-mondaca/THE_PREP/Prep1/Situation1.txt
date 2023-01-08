@@ -1,0 +1,2 @@
+Cientificos de una organizacion secreta se te han aproximado, han conducido una serie de experimentos en entidades y objetos ánomalos (denominados scp). Desean analizar los datos que han obtenido, para este fin, te han encargado crear un programa que analice los siguientes parámetros.
+
