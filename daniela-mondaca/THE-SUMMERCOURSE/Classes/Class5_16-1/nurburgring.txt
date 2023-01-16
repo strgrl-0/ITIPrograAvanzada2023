@@ -1,0 +1,100 @@
+Porsche,26,1931,Alemania
+Porsche 911 GT3 RS;06;56.000;2018
+Porsche 918 Spyder;06;57.000;2013
+Porsche 911 GT2 RS;07;18.000;2010
+Porsche 911 GT3 RS 4.0;07;27.000;2011
+Porsche Carrera GT;07;28.710;2003
+Porsche 911 GT2;07;31.000;2007
+Porsche 919 Hybrid Evo;05;19.550;2018
+Porsche 911 Turbo S;07;32.000;2010
+Porsche 911 GT3 RS;07;33.000;2010
+Porsche 911 Carrera S;07;37.900;2011
+2017 Porsche Panamera Turbo;07;38.000;2016
+Porsche 911 Turbo;07;38.000;2006
+Porsche 911 GT3;07;40.000;2009
+Porsche 911 GT3;07;42.000;2006
+Porsche 911 GT3 RS;07;43.000;2003
+Porsche 911 GT2;07;46.000;2000
+Porsche 911 Turbo;07;47.000;2009
+Porsche 911 GT2 RS;06;47.300;2017
+Porsche 911 GT3 RS;07;48.000;2006
+Porsche 911 Carrera S;07;50.000;2008
+Porsche Panamera Turbos S;07;52.000;2011
+Porsche 911 GT3;07;54.000;2003
+Porsche 911 Turbo;07;56.000;2000
+Porsche Panamera Sport Chrono Turbo;07;56.000;2009
+Porsche Panamera Turbo;07;56.000;2009
+Porsche 911 GT3;07;56.330;1999
+Lamborghini,12,1963,Italia
+Lamborghini Aventador SVJ;06;44.970;2018
+Lamborghini Aventador LP 750-4 Superveloce;06;59.730;2015
+Lamborghini Aventador LP700-4;07;25.000;2011
+Lamborghini Murcielago LP640;07;40.000;2006
+Lamborghini Murcielago LP 670-4 SuperVeloce;07;42.000;2009
+Lamborghini Gallardo Superleggera;07;46.000;2007
+Lamborghini Murcielago LP-640 E-gear;07;47.000;2007
+Lamborghini Murcielago;07;50.000;2002
+Lamborghini Gallardo;07;52.000;2003
+Lamborghini Gallardo LP560-4;07;52.000;2008
+Lamborghini Huracan Performante;06;52.01;2016
+Lamborghini Gallardo LP 570-4 Superleggera;7;38.00;2010
+Mercedes,9,1926,Alemania
+Mercedes SLS AMG GT;07;30.000;2012
+Mercedes SLS AMG Black Series;07;26.400;2014
+McLaren Mercedes SLR;07;40.000;2003
+Mercedes CLK 63 Black Series;07;45.000; 2007
+Mercedes C 63 AMG Coupe Black Series;07;45.000;2011
+Mercedes E 63 S AMG (Wagon);07;45.190;2017
+Mercedes SL65 AMG Black Series;07;51.000;2009
+Mercedes CLK DTM;07;54.000;2004
+Mercedes-Benz SLS AMG Coupé Electric Drive;07;56.230;2013
+Chevrolet,7,1911,Estados Unidos
+Chevrolet Corvette ZR1;07;19.630;2012
+Chevrolet Corvette Z06;07;22.680;2011
+Chevrolet Camaro Z/28;07;37.470;2014
+Chevrolet Camaro ZL1 1LE;07;16.040;2018
+Chevrolet Camaro ZL-1;07;41.270;2011
+Chevrolet Corvette Z06;07;42.900;2005
+Chevrolet Corvette Z06;07;56.000;2002
+Ferrari,7,1947,Italia
+Ferrari Enzo;07;25.210;2002
+Ferrari 458 Italia;07;28.000;2009
+Ferrari 430 Scuderia;07;39.000;2007
+Ferrari 599 GTB Fiorano;07;47.000;2006
+Ferrari F430;07;55.000;2005
+Ferrari 360 CS;07;56.000;2003
+Ferrari California GT;07;56.000;2009
+BMW,5,1916,Alemania
+BMW M3 GTS;07;48.000;2010
+BMW M3 CSL;07;50.000;2003
+BMW M4 GTS;07;27.880;2016
+BMW M4;07;52.000;2015
+BMW M5;07;55.000;2011
+Nissan,5,1933,Japón
+Nissan GT-R Nismo;07;8.680;2015
+Nissan GT-;07;19.100;2013
+Nissan GT-R;07;24.220;2011
+Nissan GT-R;07;26.700;2008
+Nissan GT-R Spec-V;07;34.460;2009
+Radical Sportscars,4,1997,Reino Unido
+Radical SR8LM;06;48.000;2009
+Radical SR8;06;56.080;2005
+Radical SR3 Turbo;07;19.000;2003
+Radical SR3;07;42.000;2002
+Audi,3,1910,Alemania
+Audi RS4;07;58.000;2005
+Audi R8 GT;07;34.000;2010
+Audi R8 V10 5.2 FSI;07;44.000;2009
+Pagani,3,1992,Italia
+Pagani Zonda C12 S;07;44.000;2002
+Pagani Zonda F Clubsport;07;24.440;2005
+Pagani Zonda F;07;33.000;2005
+Alfa Romeo,2,1910,Italia
+Alfa Romeo Giulia Quadrifoglio;07;39.000;2015
+Alfa Romeo Stelvio Quadrifoglio;07;51.700;2017
+Dodge,2,1900,Estados Unidos
+Dodge Viper SRT-10 ACR;07;12.130;2010
+Dodge Viper ACR;07;22.100;2009
+Ford,2,1903,Estados Unidos
+Ford Shelby GT350R;07;32.190;2015
+Ford GT;07;52.000;2004
