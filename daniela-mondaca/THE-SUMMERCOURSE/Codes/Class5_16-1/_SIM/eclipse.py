@@ -24,7 +24,7 @@ while(chckLlamados==True):
 #Counts
 
 ReservasConfDia=int(0);ReservasTotalesDia=int(0);MasConf=int(0);MostConfClient=str("def");IngresosDia=int(0);IngresosDiasExtra=int(0)
-FreedUP=int(0);toPay=int(0);Devo=float(0)  
+FreedUP=int(0);toPay=int(0);Devo=float(0);ReservedP=int(0);ReservedS=int(0)
         
 if(exec==True):
     for i in range(llamadosDCurrent):
@@ -103,13 +103,14 @@ if(exec==True):
             elif(Tarifa=="P"):
                 Devo=DiasReserva*250*0.75
                 
-            print("Reserva cancelada, devolución: USD"+str(Devo))
+            print("Reserva cancelada, devolución: USD "+str(Devo))
         
         #req2-3-4-5
         if(Confirmacion=="S"):
             DiasConf=0
             DiasConf=DiasReserva+DiasADI
             
+ 
             if(DiasConf>MasConf):
                 MasConf=DiasConf
                 MostConfClient=NombreCliente
@@ -121,24 +122,36 @@ if(exec==True):
             PrecioReserva=(DiasReserva*120)*680
             #Dias Adicionales
             PrecioAdicionales=(DiasADI*120)*680
-            PrecioReservaTot=PrecioReserva+PrecioAdicionales;IngresosDiasExtra+=PrecioAdicionales
-            
+            PrecioReservaTot=PrecioReserva+PrecioAdicionales
             
         elif(Tarifa=="P"):
             PrecioReserva=(DiasReserva*250)*680
             #Dias Adicionales
             PrecioAdicionales=(DiasADI*250)*680
-            PrecioReservaTot=PrecioReserva+PrecioAdicionales;IngresosDiasExtra+=PrecioAdicionales
+            PrecioReservaTot=PrecioReserva+PrecioAdicionales
         
         #Calc 25% de cancelacion 
         if(Confirmacion=="N"):
             PrecioCancelacion=int(0)
             PrecioCancelacion=PrecioReserva*0.25
             IngresosDia+=PrecioCancelacion
-            
             FreedUP+=PrecioReserva
+            
+            if(Tarifa=="S"):
+                ReservedS=ReservedS-DiasReserva
+            elif(Tarifa=="P"):
+                ReservedP=ReservedP-DiasReserva
+            
         elif(Confirmacion=="S"):
-            IngresosDia+=PrecioReserva
+            IngresosDia+=PrecioReservaTot
+            IngresosDiasExtra+=PrecioAdicionales
+            
+            if(Tarifa=="S"):
+                ReservedS+=DiasReserva+DiasADI
+            elif(Tarifa=="P"):
+                ReservedP+=DiasReserva+DiasADI
+                
+               
             
             
         
@@ -158,6 +171,6 @@ if(exec==True):
     #req5-Out
     print("El posible ingreso por habitaciones libres es: CLP "+str(FreedUP))
     #req6-Out
-    
+    print("Habitaciones reservadas: "+str(ReservedS)+" Standard, "+str(ReservedP)+" Premium")
     #debug
     
