@@ -1,0 +1,15 @@
+Santiago,3.4
+La Serena,3.6
+Coquimbo,7.9
+Atacama,8.3
+Paihuano,5.6
+Santiago,7.4
+La Serena,6.7
+Coquimbo,1.4
+Atacama,2.0
+Paihuano,8.9
+Santiago,5.7
+Santiago,7.2
+La Serena,5.6
+Coquimbo,0.5
+Paihuano,3.5
