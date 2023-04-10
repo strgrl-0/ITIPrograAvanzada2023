@@ -1,0 +1,11 @@
+Traspasavocablo,-1
+Late 1,-1
+Serie 10,-1
+Noticias 2,7
+Noticias 3,21
+Emergencia Veterinaria,-1
+Matinal 3,-1
+Novela Turca 2,-1
+Serie 11,-1
+Sitios que Conversan,-1
+Pop,10
