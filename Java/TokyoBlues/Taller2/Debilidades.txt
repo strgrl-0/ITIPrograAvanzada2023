@@ -1,0 +1,3 @@
+Desconectar Su base de datos,3
+Formatear Memoria,2
+Destruir Neuronas,5

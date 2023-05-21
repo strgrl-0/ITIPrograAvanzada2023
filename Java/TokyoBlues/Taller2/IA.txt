@@ -1,0 +1,2 @@
+Helios, Java, 5, desconocida, Chile, 99%, IA autónoma militar, 1
+Nova, C#, 2, Desconectar Su base de datos, Chile, 53%, IA social, 2

@@ -1,0 +1,2 @@
+1, Pablo, Bocchi, 2, Java, C, Python, Chile, Coquimbo
+2, Jaime, Rivera, 3, Java, C, Python, C#, C++, Chile, Santiago
