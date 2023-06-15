@@ -1,4 +1,4 @@
-import java.io.*;
+mport java.io.*;
 import java.util.*;
 
 public class App {
@@ -164,7 +164,7 @@ public class App {
 				System.out.println("Bienvenido");
 				//Mostar por consola el usuario que ingreso
 				System.out.println("Usuario= " + encontrar.getNombre() + " " + "Contraseña= " + encontrar.getContraseña());
-				menuUsuario(listaUsuarios, listaIa);
+				menuUsuario(listaUsuarios);
 			}else {
 				//Si retorna nulo, significa que no fue encontrado el usuario...
 				System.out.println("No encontrado");
@@ -185,7 +185,7 @@ public class App {
 						//Guardar usuario en contenedor
 						listaUsuarios.ingresarUsuario(nuevoUsuario);
 						System.out.println(listaUsuarios.toString());
-						menuUsuario(listaUsuarios, listaIa);
+						menuUsuario(listaUsuarios);
 						//Salida de menu
 						ejecucion = false;
 						break;
@@ -208,7 +208,7 @@ public class App {
 	
 	//Funcion encargada de el inicio de sesion de usuario normal
 
-	public static void menuUsuario(ListaUsuarios listaUsuarios, ListaIa listaIa) {
+	public static void menuUsuario(ListaUsuarios listaUsuarios) {
 		boolean ejecucion = true; //Ejecucion de menu
 		String opcion;
 		Scanner sc = new Scanner(System.in);//Escaner
@@ -221,23 +221,19 @@ public class App {
 			//Menu dependiendo de la opcion
 			switch(opcion) {
 			case "1":
-				menuUsuario.agregarDebilidadIA(listaIa);
+				//Agregar debilidad IAsdsareejjjhpa
 				break;
 			case "2":
 				//Modificar datos usuario
-				menuUsuario.modificarDatosUsuario(listaUsuarios);
 				break;
 			case "3":
 				//Modificar Precision IA
-				menuUsuario.modificarPrecisionIA(listaIa);
 				break;
 			case "4":
-				//Ver Ia
-				menuUsuario.verIA(listaIa);
+				//Ver IAS
 				break;
 			case "5":
 				//Ver tipos IA
-				menuUsuario.verTiposIA(listaIa);
 				break;
 			case "6":
 				System.out.println("Saliendo...");

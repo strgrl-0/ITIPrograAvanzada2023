@@ -54,7 +54,7 @@ public class ListaIa {
 				System.out.println("Ingrese tipo");
 				System.out.println("1- IA autonoma militar \n 2- IA Supervisora \n 3-IA transhumanista \n 4- IA social "
 						+ "\n IA realidad virtual");
-				String tipo = sc.nextLine().trim().toUpperCase();
+				String tipo = sc.nextLine().trim();
 				switch(tipo){
 				case "1":
 					tipo = "IA AUTONOMA MILITAR";
@@ -375,6 +375,9 @@ public class ListaIa {
 		return cantPaises;
 	}
 	
+	public void agregarDebilidadUsr(int agregarDebilidad){
+		
+	}
 	//To string
 	public String toString() {
 		String r = "";

@@ -61,6 +61,16 @@ public class ListaDebilidades {
 		}
 	}
 
+	public String[] leerDebilidades(){
+		String[] debExistentesStr = new String[max];
+		for(int i=0; i<cantDebilidad; i++){
+			if(listaDebilidades[i].toString()!=debExistentesStr[i]){
+				debExistentesStr[i]=listaDebilidades[i].toString();
+			}
+		}
+		
+	}	
+
 	//To String
 	public String toString() {
 		String r = "";
