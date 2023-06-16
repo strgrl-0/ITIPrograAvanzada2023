@@ -4,12 +4,19 @@ public abstract class Soldier extends StatHuman{
     private int soldier_value;
 
     //builder
-    public Soldier(int id, String name, String surname, String nickname, 
-    String specialization, int soldier_value){
+    public Soldier(
+    int id, 
+    String name, 
+    String surname, 
+    String nickname, 
+    String specialization, 
+    int soldier_value
+    ){
         super(id, name, surname, specialization);
         this.nickname = nickname;
         this.soldier_value = soldier_value;
     }
+
 
     //get
 
@@ -20,6 +27,7 @@ public abstract class Soldier extends StatHuman{
     public int getSoldier_value(){
         return soldier_value;
     }
+
 
     
 }
