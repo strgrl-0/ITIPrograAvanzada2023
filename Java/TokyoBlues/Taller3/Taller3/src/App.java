@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import MainClasses.StatHuman;
+import MainClasses.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -36,6 +36,15 @@ public class App {
 
             System.out.println(objects[i]);
         }
+
+        //test Ia
+        System.out.println(Ia.create("alto", "S+", 1000));
+
+        //test User
+        System.out.println(User.create("Gabe", "marico1265", "Italia", "Admin"));
+
+        //test country
+        System.out.println(StatCountry.create("Chile", 17000000, 15000000, 385, 3500000));
 
     }
 }
