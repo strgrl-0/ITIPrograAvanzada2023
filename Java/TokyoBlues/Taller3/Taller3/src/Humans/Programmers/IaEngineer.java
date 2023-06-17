@@ -40,16 +40,12 @@ public class IaEngineer extends Programmer {
         return currentIaEngineer;
         
         }
-@Override
-public String toString() {
-    String toPrint;
-    toPrint =   getUniqueId() + " " +
-                getUniqueName() + " " +
-                getUniqueSurname() + " " +
-                getUniqueSpecialization() + " " +
-                getProgrammerValue() + " " +
-                iaAlgorithmExperienceLevel + " " +
-                implementedAlgorithms + " ";
-    return toPrint;
-}
+        public String toString() {
+            String toPrintIaEngineer;
+            toPrintIaEngineer =  super.toString() + 
+                                iaAlgorithmExperienceLevel + " " +
+                                implementedAlgorithms;
+            
+            return toPrintIaEngineer;
+        } 
 }

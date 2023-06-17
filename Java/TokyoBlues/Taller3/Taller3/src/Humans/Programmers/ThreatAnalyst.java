@@ -43,18 +43,12 @@ public class ThreatAnalyst extends Programmer{
         return currentThreatAnalyst;
     }
 
-    @Override
     public String toString() {
-        String toPrint;
-        toPrint =   getUniqueId() + " " +
-                    getUniqueName() + " " +
-                    getUniqueSurname() + " " +
-                    getUniqueSpecialization() + " " +
-                    getProgrammerValue() + " " +
-                    iaVulnerabilityIdentificationCapacity + " " +
-                    threatsDetected;
-                    
-        return toPrint;
+        String toPrintThreatAnalyst;
+        toPrintThreatAnalyst =  super.toString() + 
+                                iaVulnerabilityIdentificationCapacity + " " +
+                                threatsDetected;
+        return toPrintThreatAnalyst;
     }
 
 }

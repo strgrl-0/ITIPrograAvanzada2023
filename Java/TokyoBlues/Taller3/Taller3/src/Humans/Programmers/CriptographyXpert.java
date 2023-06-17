@@ -57,17 +57,13 @@ public class CriptographyXpert extends Programmer {
 
     @Override
     public String toString() {
-        String toPrint;
-        toPrint =   getUniqueId() + " " +
-                    getUniqueName() + " " +
-                    getUniqueSurname() + " " + 
-                    getUniqueSpecialization() + " " +
-                    getProgrammerValue() + " " +
-                    criptographicAlgorithmKnowledge + " " +
-                    xperienceLevelInDataSec + " " +
-                    succesfulImplementations + " " +
-                    obfuscationAbilityLevel;
-
-        return toPrint;
+        String toPrintCriptographyXpert;
+        toPrintCriptographyXpert =  super.toString() + 
+                                    criptographicAlgorithmKnowledge + " " +
+                                    xperienceLevelInDataSec + " " +
+                                    succesfulImplementations + " " +
+                                    obfuscationAbilityLevel;
+        
+        return toPrintCriptographyXpert;
     }
 }

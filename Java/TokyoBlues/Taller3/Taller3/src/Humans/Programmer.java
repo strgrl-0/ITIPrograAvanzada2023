@@ -26,8 +26,10 @@ public class Programmer extends StatHuman{
     @Override
     public String toString() {
         String toPrintProgrammer;
-        toPrintProgrammer = super.toString() +
-                             
+        toPrintProgrammer = super.toString() + " " +
+                            getUniqueSpecialization() + " " +
+                            programmer_value + " ";
+        return toPrintProgrammer;
     }
 }
 
