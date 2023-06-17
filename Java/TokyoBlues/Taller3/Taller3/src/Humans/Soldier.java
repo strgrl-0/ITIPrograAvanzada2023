@@ -1,4 +1,7 @@
 package Humans;
+
+import MainClasses.StatHuman;
+
 public abstract class Soldier extends StatHuman{
 
     private String nickname;
@@ -29,6 +32,15 @@ public abstract class Soldier extends StatHuman{
         return soldier_value;
     }
 
+    @Override
+    public String toString(){
+        String toStringSoldier = super.toString();
+        toStringSoldier =   toStringSoldier + " " +
+                            nickname + " " +
+                            getUniqueSpecialization() + " " +
+                            soldier_value;
 
+        return toStringSoldier;
+    }
     
 }

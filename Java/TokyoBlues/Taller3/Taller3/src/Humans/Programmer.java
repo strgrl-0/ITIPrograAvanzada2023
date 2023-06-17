@@ -1,4 +1,7 @@
 package Humans;
+
+import MainClasses.StatHuman;
+
 public class Programmer extends StatHuman{
 
     private int programmer_value;
@@ -22,9 +25,9 @@ public class Programmer extends StatHuman{
     
     @Override
     public String toString() {
-        String toPrint;
-        toPrint = getUniqueId()+" "+getUniqueName()+" "+getUniqueSurname()+" "+getUniqueSpecialization()+" "+programmer_value;
-        return toPrint;
+        String toPrintProgrammer;
+        toPrintProgrammer = super.toString() +
+                             
     }
 }
 
