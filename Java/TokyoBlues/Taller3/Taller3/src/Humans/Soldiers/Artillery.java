@@ -1,6 +1,8 @@
 package Humans.Soldiers;
 import Helpers.Abort;
 import Humans.Soldier;
+import Helpers.Limiters;
+
 
 public class Artillery extends Soldier{
     private int destroyedTargets;
@@ -41,8 +43,7 @@ public class Artillery extends Soldier{
             destroyedTargets, 
             accuracy);
 
-        boolean isSoldierValueValid = Abort.valuesLimiter(soldier_value);
-        currentArtillery = (Artillery) Abort.delete(currentArtillery, isSoldierValueValid);
+            soldier_value = Limiters.valuesLimiter(soldier_value);
 
         return currentArtillery;
     }

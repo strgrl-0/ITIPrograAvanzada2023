@@ -1,6 +1,7 @@
 package Humans.Programmers;
 import Humans.Programmer;
 import Helpers.Abort;
+import Helpers.Limiters;
 
 public class ThreatAnalyst extends Programmer{
     private String iaVulnerabilityIdentificationCapacity;
@@ -41,10 +42,13 @@ public class ThreatAnalyst extends Programmer{
         threatsDetected
         );
 
-        boolean isProgrammerValueValid = Abort.valuesLimiter(programmerValue);
-        currentThreatAnalyst = (ThreatAnalyst) Abort.delete(currentThreatAnalyst, 
-        isProgrammerValueValid);
-
+        //line 43, IaEngineer class
+    
+        boolean isProgrammerLevelValid = Limiters.isProgrammerLevelValid(iaVulnerabilityIdentificationCapacity);
+        currentThreatAnalyst = (ThreatAnalyst) Abort.delete(
+            currentThreatAnalyst,
+            isProgrammerLevelValid);
+            
         return currentThreatAnalyst;
     }
 

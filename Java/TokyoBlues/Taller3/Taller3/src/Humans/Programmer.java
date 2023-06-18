@@ -6,7 +6,8 @@ public class Programmer extends StatHuman{
 
     private int programmer_value;
     //Builder
-    public Programmer(
+    public Programmer(                              //TODO REFACTOR: Attribute programmerValue
+                                                    // must be completely internal, can't be visible
     int id, 
     String name, 
     String surname, 

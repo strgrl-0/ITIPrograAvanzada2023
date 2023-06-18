@@ -78,9 +78,9 @@ public class Ia {
         if(TotalHp>maxTotalHp){
             String Error = "An Ai CANT have more than 4994 total HP";
             System.out.println(Error);
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         } 
 
     }

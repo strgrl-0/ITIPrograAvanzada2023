@@ -52,7 +52,7 @@ public class User {
             }
         }
 
-        return !isValid;    //abort takes true for deletion
+        return isValid;    //abort takes true for deletion
     }
 
     public static boolean isUsernameRepeated(

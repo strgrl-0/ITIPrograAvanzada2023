@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         String aaaaa = "1,pooferfish,mamawebo,IaEngineer,110,Low,34";
-        String bbbbb = "1,pooferfish,mamawebo,ThreatAnalyst,110,Med,123";
+        String bbbbb = "1,pooferfish,mamawebo,ThreatAnalyst,110,Intermediate,123";
         String ccccc = "1,pooferfish,mamawebo,CriptographyXpert,110,Low,Intermediate,4,Advanced"; 
 
         String a1 = "1,pooferfish,mamawebo,elgluglu,Artillery,100,40,99.2";

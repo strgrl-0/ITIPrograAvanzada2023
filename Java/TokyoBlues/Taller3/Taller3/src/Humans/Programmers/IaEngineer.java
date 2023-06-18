@@ -2,6 +2,7 @@
 package Humans.Programmers;
 import Humans.Programmer;
 import Helpers.Abort;
+import Helpers.Limiters;
 
 public class IaEngineer extends Programmer {
     
@@ -39,9 +40,14 @@ public class IaEngineer extends Programmer {
         iaAlgorithmExperienceLevel, 
         implementedAlgorithms);
 
-        boolean isProgrammerValueValid = Abort.valuesLimiter(programmer_value);
-        currentIaEngineer = (IaEngineer) Abort.delete(currentIaEngineer, 
-        isProgrammerValueValid);
+        //I KNOW THERE'S A BETTER WAY BUT IM NOT IN THE MOOD RN
+    
+        boolean isProgrammerLevelValid = Limiters.isProgrammerLevelValid(iaAlgorithmExperienceLevel);
+        currentIaEngineer = (IaEngineer) Abort.delete(
+            currentIaEngineer,
+            isProgrammerLevelValid);
+
+            
         return currentIaEngineer;
         
         }

@@ -1,6 +1,7 @@
 package Humans.Soldiers;
 import Helpers.Abort;
 import Humans.Soldier;
+import Helpers.Limiters;
 
 public class Infantry extends Soldier{
     private int completeMissions;
@@ -41,8 +42,9 @@ public class Infantry extends Soldier{
             Soldier_value, 
             completeMissions, 
             weapon);
-        boolean isSoldierValueValid = Abort.valuesLimiter(Soldier_value);
-        currentInfantry = (Infantry) Abort.delete(currentInfantry, isSoldierValueValid);
+
+        Soldier_value = Limiters.valuesLimiter(Soldier_value);
+
     
         return currentInfantry;
     }
