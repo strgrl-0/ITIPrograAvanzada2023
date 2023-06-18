@@ -1,5 +1,6 @@
 package Humans.Soldiers;
 import Humans.Soldier;
+import Helpers.Abort;
 
 public class Logistics extends Soldier{
     private int distributedSupplies;
@@ -30,7 +31,7 @@ public class Logistics extends Soldier{
         int distributedSupplies,
         int attendedTroops
     ){
-        Logistics currenLogistics = new Logistics(
+        Logistics currentLogistics = new Logistics(
             id,
             name,
             surname,
@@ -40,8 +41,10 @@ public class Logistics extends Soldier{
             distributedSupplies,
             attendedTroops
         );
+        boolean isSoldierValueValid = Abort.valuesLimiter(soldier_value);
+        currentLogistics = (Logistics) Abort.delete(currentLogistics, isSoldierValueValid);
 
-        return currenLogistics;
+        return currentLogistics;
     }
 
 

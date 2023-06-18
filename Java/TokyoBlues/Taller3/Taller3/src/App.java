@@ -1,12 +1,11 @@
 import java.util.Scanner;
 import MainClasses.*;
-
 public class App {
     public static void main(String[] args) throws Exception {
 
         String aaaaa = "1,pooferfish,mamawebo,IaEngineer,110,Low,34";
         String bbbbb = "1,pooferfish,mamawebo,ThreatAnalyst,110,Med,123";
-        String ccccc = "1,pooferfish,mamawebo,CriptographyXpert,110,Low,Medium,4,High"; 
+        String ccccc = "1,pooferfish,mamawebo,CriptographyXpert,110,Low,Intermediate,4,Advanced"; 
 
         String a1 = "1,pooferfish,mamawebo,elgluglu,Artillery,100,40,99.2";
         String a2 = "1,pooferfish,mamawebo,elgluglu,Infantry,100,20,LEW";
@@ -38,11 +37,10 @@ public class App {
         }
 
         //test Ia
-        System.out.println(Ia.create("alto", "S+", 1000));
+        System.out.println(Ia.create("alto", "S+", 200));
 
         //test User
-        System.out.println(User.create("Gabe", "marico1265", "Italia", "Admin"));
-
+        System.out.println(User.create("Gabe", "marico1265", "Italia", "User"));
         //test country
         System.out.println(StatCountry.create("Chile", 17000000, 15000000, 385, 3500000));
 

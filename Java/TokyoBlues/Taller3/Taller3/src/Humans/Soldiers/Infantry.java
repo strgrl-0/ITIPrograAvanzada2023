@@ -1,4 +1,5 @@
 package Humans.Soldiers;
+import Helpers.Abort;
 import Humans.Soldier;
 
 public class Infantry extends Soldier{
@@ -32,14 +33,16 @@ public class Infantry extends Soldier{
         String weapon
     ){
         Infantry currentInfantry = new Infantry(
-        id, 
-        name, 
-        surname, 
-        nickname, 
-        specialization, 
-        Soldier_value, 
-        completeMissions, 
-        weapon);
+            id, 
+            name, 
+            surname, 
+            nickname, 
+            specialization, 
+            Soldier_value, 
+            completeMissions, 
+            weapon);
+        boolean isSoldierValueValid = Abort.valuesLimiter(Soldier_value);
+        currentInfantry = (Infantry) Abort.delete(currentInfantry, isSoldierValueValid);
     
         return currentInfantry;
     }

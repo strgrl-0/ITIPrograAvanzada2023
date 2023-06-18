@@ -1,7 +1,7 @@
 
 package Humans.Programmers;
 import Humans.Programmer;
-
+import Helpers.Abort;
 public class CriptographyXpert extends Programmer {
 
     private String criptographicAlgorithmKnowledge;
@@ -51,6 +51,26 @@ public class CriptographyXpert extends Programmer {
             succesfulImplementations,
             obfuscationAbilityLevel
         );
+
+        boolean areProgrammerLevelsValid = false;
+
+        /*TODO: There's prolly a less clusterfuck way but i spent a while on this fucking thing to work
+        and i just wanna move on lmfao*/
+
+        areProgrammerLevelsValid = Abort.isProgrammerLevelValid(criptographicAlgorithmKnowledge);
+        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
+            currentCriptographyXpert, 
+            areProgrammerLevelsValid);
+
+        areProgrammerLevelsValid = Abort.isProgrammerLevelValid(xperienceLevelInDataSec);
+        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
+            currentCriptographyXpert, 
+            areProgrammerLevelsValid);
+
+        areProgrammerLevelsValid = Abort.isProgrammerLevelValid(obfuscationAbilityLevel);
+        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
+            currentCriptographyXpert, 
+            areProgrammerLevelsValid);
 
         return currentCriptographyXpert;
     }

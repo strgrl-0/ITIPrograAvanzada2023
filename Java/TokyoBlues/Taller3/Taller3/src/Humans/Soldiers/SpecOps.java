@@ -1,5 +1,7 @@
 package Humans.Soldiers;
+import Helpers.Abort;
 import Humans.Soldier;
+
 public class SpecOps extends Soldier{
     private int succesfulCovertMissions;
     private int totalMissions;
@@ -44,6 +46,8 @@ public class SpecOps extends Soldier{
             totalMissions,
             obtainedResources
         );
+        boolean isSoldierValueValid = Abort.valuesLimiter(soldier_value);
+        currentSpecOps = (SpecOps) Abort.delete(currentSpecOps, isSoldierValueValid);
         
         return currentSpecOps;
     }

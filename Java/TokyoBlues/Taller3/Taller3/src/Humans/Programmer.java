@@ -16,6 +16,8 @@ public class Programmer extends StatHuman{
         super(id, name, surname, specialization);
 
         this.programmer_value = programmerValue;
+
+        
     }
 
     public int getProgrammerValue(){

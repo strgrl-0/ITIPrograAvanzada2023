@@ -35,8 +35,14 @@ public class StatCountry {
             attacksPerformedInCountry,
             totalRecruits
         );
-
+        
         return current;
+    }
+
+    //get
+
+    public String getCountryName(){
+        return countryName;
     }
 
     @Override

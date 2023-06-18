@@ -1,4 +1,5 @@
 package Humans.Soldiers;
+import Helpers.Abort;
 import Humans.Soldier;
 
 public class Artillery extends Soldier{
@@ -40,7 +41,10 @@ public class Artillery extends Soldier{
             destroyedTargets, 
             accuracy);
 
-            return currentArtillery;
+        boolean isSoldierValueValid = Abort.valuesLimiter(soldier_value);
+        currentArtillery = (Artillery) Abort.delete(currentArtillery, isSoldierValueValid);
+
+        return currentArtillery;
     }
 
 

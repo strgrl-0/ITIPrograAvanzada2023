@@ -1,6 +1,7 @@
 
 package Humans.Programmers;
 import Humans.Programmer;
+import Helpers.Abort;
 
 public class IaEngineer extends Programmer {
     
@@ -37,15 +38,21 @@ public class IaEngineer extends Programmer {
         programmer_value, 
         iaAlgorithmExperienceLevel, 
         implementedAlgorithms);
+
+        boolean isProgrammerValueValid = Abort.valuesLimiter(programmer_value);
+        currentIaEngineer = (IaEngineer) Abort.delete(currentIaEngineer, 
+        isProgrammerValueValid);
         return currentIaEngineer;
         
         }
-        public String toString() {
-            String toPrintIaEngineer;
-            toPrintIaEngineer =  super.toString() + 
-                                iaAlgorithmExperienceLevel + " " +
-                                implementedAlgorithms;
-            
-            return toPrintIaEngineer;
-        } 
+        
+
+    public String toString() {
+        String toPrintIaEngineer;
+        toPrintIaEngineer =  super.toString() + 
+                            iaAlgorithmExperienceLevel + " " +
+                            implementedAlgorithms;
+        
+        return toPrintIaEngineer;
+    } 
 }

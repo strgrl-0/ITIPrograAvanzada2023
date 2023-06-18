@@ -1,5 +1,7 @@
 package MainClasses;
 
+import Helpers.Abort;
+
 public class Ia {
     private String iaName;
     private String iaClass;
@@ -15,31 +17,33 @@ public class Ia {
         this.healthPoints = healthPoints;
     }
 
-    @Override
-    public String toString() {
-        String toPrintIa;
-        toPrintIa = iaName + " " +
-                    iaClass + " " +
-                    healthPoints;
-
-        return toPrintIa;                
-    }
-
     public static Ia create(
         String iaName, 
         String iaClass, 
         int healthPoints){
-            
+        
+        boolean skip = BaseHpLimiter(healthPoints);
+        int totalHP = totalHealthPoints(healthPoints, iaClass);
+        
+        skip = TotalHpLimiter(totalHP);
+
         Ia current = new Ia(
             iaName,
             iaClass,
-            totalHealthPoints(healthPoints, iaClass));
-            
-        return current;
-    }
+            totalHP);
+        
+        current = (Ia) Abort.delete(current, skip);
 
-    public static int totalHealthPoints(int initialHealthPoints, String iaClass){
+        return current;
+        }
+
+
+    public static int totalHealthPoints(
+        int initialHealthPoints, 
+        String iaClass){
+            
         int totalHP = 0;
+
         switch(iaClass){
             case "S+":
                 totalHP = initialHealthPoints + 2994;
@@ -64,6 +68,42 @@ public class Ia {
                 break;
         }
         return totalHP;
+        
+
+
+    }
+
+    public static boolean TotalHpLimiter(int TotalHp){
+        int maxTotalHp = 4994;
+        if(TotalHp>maxTotalHp){
+            String Error = "An Ai CANT have more than 4994 total HP";
+            System.out.println(Error);
+            return true;
+        }else{
+            return false;
+        } 
+
+    }
+
+    public static boolean BaseHpLimiter(int baseHp){
+        int maxBaseHp = 2000;
+        if(baseHp>maxBaseHp){
+            String Error = "An Ai CANT have more than 2000 base HP";
+            System.out.println(Error);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        String toPrintIa;
+        toPrintIa = iaName + " " +
+                    iaClass + " " +
+                    healthPoints;
+
+        return toPrintIa;                
     }
 
 
