@@ -37,8 +37,7 @@ public abstract class Soldier extends StatHuman{
         String toStringSoldier = super.toString();
         toStringSoldier =   toStringSoldier + " " +
                             nickname + " " +
-                            getUniqueSpecialization() + " " +
-                            soldier_value;
+                            getUniqueSpecialization() + " ";
 
         return toStringSoldier;
     }

@@ -6,8 +6,7 @@ public class Programmer extends StatHuman{
 
     private int programmer_value;
     //Builder
-    public Programmer(                              //TODO REFACTOR: Attribute programmerValue
-                                                    // must be completely internal, can't be visible
+    public Programmer(                   
     int id, 
     String name, 
     String surname, 
@@ -27,11 +26,10 @@ public class Programmer extends StatHuman{
 
     
     @Override
-    public String toString() {
+    public String toString() {                                  //programmerValue is NOT shown
         String toPrintProgrammer;
         toPrintProgrammer = super.toString() + " " +
-                            getUniqueSpecialization() + " " +
-                            programmer_value + " ";
+                            getUniqueSpecialization() + " ";
         return toPrintProgrammer;
     }
 }

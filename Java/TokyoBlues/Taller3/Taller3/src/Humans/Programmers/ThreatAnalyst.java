@@ -16,7 +16,6 @@ public class ThreatAnalyst extends Programmer{
     String iaVulnerabilityIdentificationCapacity,
     int threatsDetected
     ){
-        
         super(id, name, surname, specialization, programmerValue);
         this.iaVulnerabilityIdentificationCapacity = iaVulnerabilityIdentificationCapacity;
         this.threatsDetected = threatsDetected;
@@ -30,7 +29,9 @@ public class ThreatAnalyst extends Programmer{
     int programmerValue, 
     String iaVulnerabilityIdentificationCapacity,
     int threatsDetected
-    ){
+    ){  
+
+        programmerValue = Limiters.calculateProgrammerValue(iaVulnerabilityIdentificationCapacity, programmerValue);
 
         ThreatAnalyst currentThreatAnalyst = new ThreatAnalyst(
         id,

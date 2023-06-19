@@ -19,20 +19,20 @@ public class User {
         this.clearance = clearance;
     }
 
-    public static User create(
-        String username, 
-        String password, 
-        String country, 
-        String clearance){
-        
-        boolean isClearanceValid = isClearanceValid(clearance);
+    public static User create(String[] partsUser){
+        String username = partsUser[0];
+        String password = partsUser[1];
+        String country = partsUser[2];
+        String clearance = partsUser[3];
+
         
         User current = new User(
             username,
             password,
             country,
             clearance);
-        
+            
+        boolean isClearanceValid = isClearanceValid(clearance);
         current = (User) Abort.delete(current, isClearanceValid);
         return current;
     }
@@ -52,7 +52,7 @@ public class User {
             }
         }
 
-        return isValid;    //abort takes true for deletion
+        return isValid; 
     }
 
     public static boolean isUsernameRepeated(

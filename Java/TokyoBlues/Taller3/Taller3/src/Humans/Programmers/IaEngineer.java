@@ -31,7 +31,8 @@ public class IaEngineer extends Programmer {
     String iaAlgorithmExperienceLevel,
     int implementedAlgorithms
     ){
-
+        programmer_value = Limiters.calculateProgrammerValue(iaAlgorithmExperienceLevel, implementedAlgorithms);
+        
         IaEngineer currentIaEngineer = new IaEngineer(id, 
         name, 
         surname, 

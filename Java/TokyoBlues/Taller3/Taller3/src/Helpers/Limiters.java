@@ -4,12 +4,12 @@ import MainClasses.*;
 public class Limiters {
     public static int valuesLimiter(int value){
         int maxValue = 999;
-
+        
         if(value>maxValue){
-            System.out.println("The value " + value + " is out of the 999 limit");
-            System.out.println("It'll be truncated down to 999");
             value = 999;
-
+            return value;
+        }else if(value<0){
+            value = 0;
             return value;
         }else{
             return value;

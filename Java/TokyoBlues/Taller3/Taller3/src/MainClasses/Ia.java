@@ -17,11 +17,12 @@ public class Ia {
         this.healthPoints = healthPoints;
     }
 
-    public static Ia create(
-        String iaName, 
-        String iaClass, 
-        int healthPoints){
+    public static Ia create(String[] iaParts){
         
+        String iaName = iaParts[0];
+        String iaClass = iaParts[1];
+        int healthPoints = Integer.parseInt(iaParts[2]);
+
         boolean skip = BaseHpLimiter(healthPoints);
         int totalHP = totalHealthPoints(healthPoints, iaClass);
         

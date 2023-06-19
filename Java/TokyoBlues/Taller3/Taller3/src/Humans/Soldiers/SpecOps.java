@@ -1,5 +1,4 @@
 package Humans.Soldiers;
-import Helpers.Abort;
 import Helpers.Limiters;
 import Humans.Soldier;
 

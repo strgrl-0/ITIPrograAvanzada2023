@@ -23,16 +23,16 @@ public abstract class StatHuman{
         this.uniqueSpecialization = specialization;
     }
 
-    //Programmers
+    //Programmers       programmer_value is initialized to 0 and skipped on the parts list
     public static IaEngineer createIaEngineer(String[] partsIaEngineer){
         IaEngineer currentIaengineer = IaEngineer.create(
             Integer.parseInt(partsIaEngineer[0]),
             partsIaEngineer[1],
             partsIaEngineer[2],
             partsIaEngineer[3],
-            Integer.parseInt(partsIaEngineer[4]),
-            partsIaEngineer[5],
-            Integer.parseInt(partsIaEngineer[6])
+            0,
+            partsIaEngineer[4],
+            Integer.parseInt(partsIaEngineer[5])
         );
 
         return currentIaengineer;
@@ -45,9 +45,9 @@ public abstract class StatHuman{
             partsThreatAnalyst[1],
             partsThreatAnalyst[2],
             partsThreatAnalyst[3],
-            Integer.parseInt(partsThreatAnalyst[4]),
-            partsThreatAnalyst[5],
-            Integer.parseInt(partsThreatAnalyst[6])
+            0,
+            partsThreatAnalyst[4],
+            Integer.parseInt(partsThreatAnalyst[5])
         );
 
         return currentThreatAnalyst;
@@ -60,11 +60,11 @@ public abstract class StatHuman{
             partsCriptographyXpert[1],
             partsCriptographyXpert[2],
             partsCriptographyXpert[3],
-            Integer.parseInt(partsCriptographyXpert[4]),
+            0,
+            partsCriptographyXpert[4],
             partsCriptographyXpert[5],
-            partsCriptographyXpert[6],
-            Integer.parseInt(partsCriptographyXpert[7]),
-            partsCriptographyXpert[8]
+            Integer.parseInt(partsCriptographyXpert[6]),
+            partsCriptographyXpert[7]
         );
 
         return currentCriptographyXpert;

@@ -1,6 +1,5 @@
 package Humans.Soldiers;
 import Humans.Soldier;
-import Helpers.Abort;
 import Helpers.Limiters;
 
 public class Logistics extends Soldier{
