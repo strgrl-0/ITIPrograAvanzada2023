@@ -44,7 +44,7 @@ public class User {
         boolean isValid = false;
 
         for(int i = 0; i<2; i++){
-            if(validClearanceLevels[i] == clearance){
+            if(validClearanceLevels[i].equals(clearance)){
                 isValid = true;
                 break;
             }else{
@@ -52,6 +52,9 @@ public class User {
             }
         }
 
+        if(isValid == false){
+            System.out.println("CLEARANCE INVALID, SKIPPING");
+        }
         return isValid; 
     }
 

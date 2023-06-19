@@ -6,7 +6,6 @@ import MainClasses.*;
 
 public abstract class FileHandling {
     public static Object[] fileToObject(File file) throws FileNotFoundException{
-        
         int  objectArrSize = determineArraySize(file);
 
         Object current = null;
@@ -16,25 +15,17 @@ public abstract class FileHandling {
         String filename = fileName(file);
         filename = filename.toUpperCase();
         
-
         Scanner scanner = new Scanner(file);
-        String fileLine = "";
 
-        while(scanner.hasNextLine()){
-            String[] fileLineParts = fileLine.split(",");
-
-            System.out.println(fileLineParts+"      iteration2");
-            System.out.println(filename+"           iteration2");
-
+        //FIXME stop getting null scanner values
+        while (scanner.hasNextLine()){
+            String[] fileLineParts = scanner.nextLine().strip().split(",");
             current = sendToAproppiateMethod(fileLineParts, filename);
             currentObjectArr[i] = current;
-
             i++;
-            fileLine = scanner.nextLine();
         }
 
         scanner.close();
-
         return currentObjectArr;
     }
 
@@ -43,45 +34,36 @@ public abstract class FileHandling {
         return filename;
     }
     
-
-    //FIXME: Code doesn't seem to recognize the filename-case condition, not sure why, 
-    //it recognizes stats-country but there's another error too
-
     
     public static Object sendToAproppiateMethod(String[] fileLineParts, String filename){
         Object current = null;
 
+    
         switch(filename){
-            case "STATS-SOLDIER.TXT":
-                System.out.println("iteration 3 ss");
+            case "STATS-SOLDIERS.TXT":
                 current = sendToStatHuman(fileLineParts);
                 return current;
-            case "STATS-PROGRAMMER.TXT":
-                System.out.println("iteration 3 sp");
+            case "STATS-PROGRAMMERS.TXT":
                 current = sendToStatHuman(fileLineParts);
                 return current;
-            case "STATS-COUNTRY.TXT":
-                System.out.println("iteration 3 sc");
+            case "STATS-COUNTRY.TXT": 
                 current = sendToStatCountry(fileLineParts);
+                return current;
             case "IA.TXT":
-                System.out.println("iteration 3 AI");
                 current = sendToIa(fileLineParts);
                 return current;
             case "USERS.TXT":
-                System.out.println("iteration 3 usr");
                 current = sendToUser(fileLineParts);
                 return current;
             default:
                 System.out.println("File not Recognized");
-                break;
+                return current;
 
         }
-        return current;
+        
     }
 
     public static Object sendToStatHuman(String[] fileLineParts){
-        System.out.println(fileLineParts);
-        
         Object current = StatHuman.createHumanFromString(fileLineParts);
         return current;
     }
@@ -102,15 +84,15 @@ public abstract class FileHandling {
     }
 
     public static int determineArraySize(File file) throws FileNotFoundException{
-        Scanner scanner  = new Scanner(file);
-        String fileLine = "";
+        Scanner scanner1  = new Scanner(file);
         int fileArraySize = 0;
 
-        while(scanner.hasNextLine()){
+        while(scanner1.hasNextLine()){
+
+            scanner1.nextLine().strip();
             fileArraySize++;
-            fileLine = scanner.nextLine();
         }
-        scanner.close();
+        scanner1.close();
 
         return fileArraySize;
 

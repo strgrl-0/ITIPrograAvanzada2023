@@ -158,19 +158,17 @@ public abstract class StatHuman{
     //Generalized caller
     
     public static StatHuman createHumanFromString(String[] parts) {
-        String specializationProgrammer = parts[3];
-        String specializationSoldier = parts[4];
-        
-        for(int i = 0; i<1; i++){
-            switch(specializationProgrammer){ 
-                case "IaEngineer": 
-                    return createIaEngineer(parts);
-                case "ThreatAnalyst":
-                    return createThreatAnalyst(parts); 
-                case "CriptographyXpert":
-                    return createCriptographyXpert(parts);
+        String specializationProgrammer = parts[3]; 
+        String specializationSoldier = parts[4]; 
+    
+        switch(specializationProgrammer){ 
+            case "IaEngineer": 
+                return createIaEngineer(parts);
+            case "ThreatAnalyst":
+                return createThreatAnalyst(parts); 
+            case "CriptographyXpert":
+                return createCriptographyXpert(parts);
 
-            }
         }
 
         switch(specializationSoldier){

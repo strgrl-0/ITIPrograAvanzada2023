@@ -16,26 +16,15 @@ public class App {
         //call containers
 
         Object[] arrProgrammers = FileHandling.fileToObject(programmersFile);
-
-
-    
         Object[] arrSoldiers = FileHandling.fileToObject(soldiersFile);
-
-
-
         Object[] arrStatCountry = FileHandling.fileToObject(countriesFile);
-
-
         Object[] arrIas = FileHandling.fileToObject(iasFile);
-
-
-
         Object[] arrUsers = FileHandling.fileToObject(usersFile);
 
         
-        System.out.println(arrProgrammers[0]);
-        System.out.println(arrSoldiers[0]);
-        System.out.println(arrStatCountry[0]);
+        System.out.println(arrProgrammers[1]);
+        System.out.println(arrSoldiers[1]);
+        System.out.println(arrStatCountry[1]);
         System.out.println(arrIas[0]);
         System.out.println(arrUsers[0]);
 

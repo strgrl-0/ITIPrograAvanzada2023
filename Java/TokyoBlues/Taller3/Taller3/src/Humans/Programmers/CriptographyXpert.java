@@ -4,6 +4,8 @@ import Humans.Programmer;
 import Helpers.Abort;
 import Helpers.Limiters;
 
+//FIXME: CriptographyXpert is not recognized as a class when using files for some reason, must investigate
+
 public class CriptographyXpert extends Programmer {
 
     private String criptographicAlgorithmKnowledge;

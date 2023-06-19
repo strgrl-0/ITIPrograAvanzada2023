@@ -1,1 +1,3 @@
 Alto,S,500
+Marico,S+,1000
+Atheron,D,2000
