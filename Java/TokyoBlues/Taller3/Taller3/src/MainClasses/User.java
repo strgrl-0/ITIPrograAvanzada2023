@@ -69,6 +69,36 @@ public class User {
             }
     }
 
+    //get
+    public String getUsername(){
+        return username;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public String getCountry(){
+        return country;
+    }
+
+    public String getClearance(){
+        return clearance;
+    }
+
+    //set
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+    public void setCountry(String country){
+        this.country = country;
+    }
+    
     @Override
     public String toString(){
         String toPrintUser;

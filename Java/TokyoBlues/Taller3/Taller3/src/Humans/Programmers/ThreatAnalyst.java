@@ -32,6 +32,7 @@ public class ThreatAnalyst extends Programmer{
     ){  
 
         programmerValue = Limiters.calculateProgrammerValue(iaVulnerabilityIdentificationCapacity, programmerValue);
+        iaVulnerabilityIdentificationCapacity = Limiters.isProgrammerLevelValid(iaVulnerabilityIdentificationCapacity);
 
         ThreatAnalyst currentThreatAnalyst = new ThreatAnalyst(
         id,
@@ -42,13 +43,6 @@ public class ThreatAnalyst extends Programmer{
         iaVulnerabilityIdentificationCapacity,
         threatsDetected
         );
-
-        //line 43, IaEngineer class
-    
-        boolean isProgrammerLevelValid = Limiters.isProgrammerLevelValid(iaVulnerabilityIdentificationCapacity);
-        currentThreatAnalyst = (ThreatAnalyst) Abort.delete(
-            currentThreatAnalyst,
-            isProgrammerLevelValid);
             
         return currentThreatAnalyst;
     }

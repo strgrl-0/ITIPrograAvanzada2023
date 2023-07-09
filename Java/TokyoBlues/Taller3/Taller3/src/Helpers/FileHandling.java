@@ -16,8 +16,7 @@ public abstract class FileHandling {
         filename = filename.toUpperCase();
         
         Scanner scanner = new Scanner(file);
-
-        //FIXME stop getting null scanner values
+        
         while (scanner.hasNextLine()){
             String[] fileLineParts = scanner.nextLine().strip().split(",");
             current = sendToAproppiateMethod(fileLineParts, filename);

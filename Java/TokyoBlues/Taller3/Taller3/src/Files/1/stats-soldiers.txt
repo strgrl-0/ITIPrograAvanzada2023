@@ -1,1 +1,0 @@
-001,John,Smith,Snapnap,Infantry,45,50,UZE

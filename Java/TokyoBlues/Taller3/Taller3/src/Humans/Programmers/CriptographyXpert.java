@@ -1,7 +1,6 @@
 
 package Humans.Programmers;
 import Humans.Programmer;
-import Helpers.Abort;
 import Helpers.Limiters;
 
 //FIXME: CriptographyXpert is not recognized as a class when using files for some reason, must investigate
@@ -48,6 +47,10 @@ public class CriptographyXpert extends Programmer {
         programmerValue = Limiters.calculateProgrammerValue(criptographicAlgorithmKnowledge, programmerValue);
         programmerValue = Limiters.calculateProgrammerValue(xperienceLevelInDataSec, programmerValue);
         programmerValue = Limiters.calculateProgrammerValue(obfuscationAbilityLevel, programmerValue);
+
+        criptographicAlgorithmKnowledge = Limiters.isProgrammerLevelValid(criptographicAlgorithmKnowledge);
+        xperienceLevelInDataSec = Limiters.isProgrammerLevelValid(xperienceLevelInDataSec);
+        obfuscationAbilityLevel = Limiters.isProgrammerLevelValid(obfuscationAbilityLevel);
         
         CriptographyXpert currentCriptographyXpert = new CriptographyXpert(
             id,
@@ -60,30 +63,6 @@ public class CriptographyXpert extends Programmer {
             succesfulImplementations,
             obfuscationAbilityLevel
         );
-
-
-        boolean areProgrammerLevelsValid = true;
-
-        /*TODO: There's prolly a less clusterfuck way but i spent a while on this fucking thing to work
-        and i just wanna move on lmfao*/
-
-        areProgrammerLevelsValid = Limiters.isProgrammerLevelValid(criptographicAlgorithmKnowledge);
-        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
-            currentCriptographyXpert, 
-            areProgrammerLevelsValid);
-        
-        areProgrammerLevelsValid = Limiters.isProgrammerLevelValid(xperienceLevelInDataSec);
-        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
-            currentCriptographyXpert, 
-            areProgrammerLevelsValid);
-            
-        areProgrammerLevelsValid = Limiters.isProgrammerLevelValid(obfuscationAbilityLevel);
-        currentCriptographyXpert = (CriptographyXpert) Abort.delete(
-            currentCriptographyXpert, 
-            areProgrammerLevelsValid);
-            
-
-            
         return currentCriptographyXpert;
     }
 

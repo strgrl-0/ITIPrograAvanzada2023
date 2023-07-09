@@ -1,2 +1,2 @@
 002,Sarah,Johnson,IaEngineer,Advanced,30
-001,Maria,Lamark,ThreatAnalyst,Advanced,300
+001,Maria,Lamark,CriptographyXpert,Advanced,Low,400,Intermediate

@@ -32,6 +32,7 @@ public class IaEngineer extends Programmer {
     int implementedAlgorithms
     ){
         programmer_value = Limiters.calculateProgrammerValue(iaAlgorithmExperienceLevel, implementedAlgorithms);
+        iaAlgorithmExperienceLevel = Limiters.isProgrammerLevelValid(iaAlgorithmExperienceLevel);
         
         IaEngineer currentIaEngineer = new IaEngineer(id, 
         name, 
@@ -40,13 +41,6 @@ public class IaEngineer extends Programmer {
         programmer_value, 
         iaAlgorithmExperienceLevel, 
         implementedAlgorithms);
-
-        //I KNOW THERE'S A BETTER WAY BUT IM NOT IN THE MOOD RN
-    
-        boolean isProgrammerLevelValid = Limiters.isProgrammerLevelValid(iaAlgorithmExperienceLevel);
-        currentIaEngineer = (IaEngineer) Abort.delete(
-            currentIaEngineer,
-            isProgrammerLevelValid);
 
             
         return currentIaEngineer;

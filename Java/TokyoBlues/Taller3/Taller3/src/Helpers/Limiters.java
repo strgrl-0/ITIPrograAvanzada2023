@@ -27,15 +27,17 @@ public class Limiters {
             }
         }
     
-    public static boolean isProgrammerLevelValid(String level){
+    public static String isProgrammerLevelValid(String level){
         String[] validLevels = new String[]{"Low", "Intermediate", "Advanced"};
+        String returnWrongLevel = "NotValid";
         
         for(int i = 0; i<validLevels.length; i++){
             if(validLevels[i].equals(level)){
-                return true;
+                returnWrongLevel = level;
+                return returnWrongLevel;
             }
         }
-        return false;
+        return returnWrongLevel;
     }
 
     public static int calculateProgrammerValue(String level, int currentValue){
