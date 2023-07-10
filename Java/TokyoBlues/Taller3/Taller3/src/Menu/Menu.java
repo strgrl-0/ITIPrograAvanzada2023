@@ -14,7 +14,7 @@ import MainClasses.Ia; //
 import Humans.Soldier;
 import Humans.Soldiers.Artillery;
 import Menu.History;
-import Menu.TopPlayers;
+import Menu.Player;
 
 public class Menu implements menuUsrProcedures {
     private Object[] usrArr;
@@ -28,10 +28,8 @@ public class Menu implements menuUsrProcedures {
     private History[] battleHistory;
     private User currentProfile;
 
-        //Top arrays
-    private TopPlayers[] nationalTop = new TopPlayers[3];
-    private TopPlayers[] globalTop = new TopPlayers[3];
-
+        //Top arrays    
+    private Player[] topGlobals;
 
     public Menu(Object[] usrArr, Object[] programmersArr, Object[] soldiersArr, Object[] countriesArr,
                 Object[] iasArr, User currentProfile) {
@@ -159,7 +157,7 @@ public class Menu implements menuUsrProcedures {
                     break;
             }
             String scannedString = scanData.nextLine();
-            int soldierId = Integer.parseInt(scannedString);
+            int soldierId = Integer.parseInt(scannedString);    //Adds soldier by id to linkedlist
             nodeSys.add(searchSoldier(soldierId));
         }
 
@@ -177,6 +175,8 @@ public class Menu implements menuUsrProcedures {
             int programmerId = Integer.parseInt(scannedString);
             nodeSys.add(searchProgrammer(programmerId));
         }
+
+        scanData.close();
 
         return nodeSys;
 
@@ -211,8 +211,10 @@ public class Menu implements menuUsrProcedures {
             battleHistory = preCharge();     //tries precharge
 
         } catch (FileNotFoundException e) {
-            for(int i = 0; i<battleHistory.length; i++){        //sens to Menu after showing up
-                System.out.println(battleHistory[i]);
+            for(int i = 0; i<battleHistory.length; i++){        //sens to Menu after showing up         
+                if(battleHistory[i].getPlayer()==currentProfile.getUsername()){
+                    System.out.println(battleHistory[i]);
+                }
             }
             menuUsr();
         }
@@ -222,7 +224,7 @@ public class Menu implements menuUsrProcedures {
 
     private History[] preCharge() throws FileNotFoundException {
         File HistoryFile = new File("src/File/history.txt");
-        // History File structure: String ai, String battleResult, float winrate
+        // History File structure: String ai, String battleResult, float winrate, String player
         if (HistoryFile.exists() == true) {
             Scanner scanHistory = new Scanner(HistoryFile);
             History[] historyArr = new History[fileArrSize(HistoryFile)];
@@ -233,12 +235,15 @@ public class Menu implements menuUsrProcedures {
                 String ai = parts[0];
                 String battleResult = parts[1];
                 float winrate = Float.parseFloat(parts[2]);
+                String player = parts[3];
 
-                History current = new History(ai, battleResult, winrate);
+                History current = new History(ai, battleResult, winrate, player);
 
                 historyArr[i] = current;
                 i = i + 1;
             }
+
+            scanHistory.close();
             return historyArr;
         }
         return null;
@@ -295,6 +300,8 @@ public class Menu implements menuUsrProcedures {
 
         }
 
+        lineIn.close();
+
     }
 
     public void showTop(){
@@ -306,18 +313,61 @@ public class Menu implements menuUsrProcedures {
 
     }
 
-    private TopPlayers[] createGlobalTop(History[] battleHistory){      //TODO: battlehistory must include a player attribute in order to know who battled what
+    private Player[] createGlobalTop(History[] battleHistory){      //TODO: battlehistory must include a player attribute in order to know who battled what
         if(battleHistory[0] == null){
             System.out.println("El top está vacio");
         }
+        Player[] scoreChart = createScoreChart();
 
-        String[] topGlobalsNames;
+        int maxValue = 0;
+        int aux = maxValue;
 
-        for(int i = 0; i<battleHistory.length; i++){
-            battleHistory[i].
+        for(int i = 0; i<scoreChart.length; i++){
+            if(maxValue < scoreChart[i].getScore()){
+                aux = maxValue;
+                maxValue = scoreChart[i].getScore();
+            }
+        }
+
+        for(int i = 0; i<scoreChart.length; i++){
+
         }
 
         return null;
+    }
+
+    private Player[] createScoreChart(){
+        Player[] scoreChart = new Player[battleHistory.length];
+        int iterations = battleHistory.length;
+
+        for(int i = 0; i<iterations; i++){
+            int totalCurrentScore = 0;
+            String currentPlayer = battleHistory[i].getPlayer();
+
+            for(int j = 0; j<iterations; j++){
+                if(currentPlayer == battleHistory[j].getPlayer()){
+                    totalCurrentScore = addOrTake(totalCurrentScore, battleHistory[j].getBattleResult());
+                }
+            }
+            Player current = new Player(currentPlayer, totalCurrentScore);
+            scoreChart[i] = current;
+        }
+
+        return scoreChart;
+    }            //TODO: Use a Player type array to store all the players and their times, then use that info to create the tops
+
+    private int addOrTake(int currentValue, String flag){
+        if(flag == "Win"){
+            currentValue = currentValue + 3;
+        } else if(flag == "Lose"){
+            currentValue = currentValue - 3;
+        }
+
+        return currentValue;
+    }
+
+    public int fightAgainstAi(Object[] programmersArr, Object[] soldiersArr, Object[] aiArr){
+        return 0;
     }
 
     public void menuAdmin() {

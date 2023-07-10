@@ -21,20 +21,12 @@ public class App {
         Object[] arrStatCountry = FileHandling.fileToObject(countriesFile);
         Object[] arrIas = FileHandling.fileToObject(iasFile);
         Object[] arrUsers = FileHandling.fileToObject(usersFile);
-        
-        System.out.println(arrProgrammers[1]);
-        System.out.println(arrSoldiers[1]);
-        System.out.println(arrStatCountry[1]);
-        System.out.println(arrIas[0]);
-        System.out.println(arrUsers[0]);
-
 
         boolean processedClearance = MainLogin.Login(arrUsers);
 
         if(processedClearance == true){
             //ProceduresAdmin
         }else if(processedClearance == false){
-            Menu MenuUsr = new Menu(arrUsers, arrProgrammers, arrSoldiers, arrStatCountry, arrIas); 
         }
         
     }

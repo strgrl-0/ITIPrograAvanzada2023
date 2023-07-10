@@ -4,11 +4,13 @@ public class History {
     private String ai;
     private String battleResult;
     private float winrate;
+    private String player;
 
-    public History(String ai, String battleResult, float winrate){
+    public History(String ai, String battleResult, float winrate, String player){
         this.ai = ai;
         this.battleResult = battleResult;
         this.winrate = winrate;
+        this.player = player;
     }
 
     //set get
@@ -21,6 +23,9 @@ public class History {
     public float getWinrate(){
         return winrate;
     }
+    public String getPlayer(){
+        return player;
+    }
 
     public void setAi(String ai){
         this.ai = ai;
@@ -31,7 +36,10 @@ public class History {
     public void setWinrate(float winrate){
         this.winrate = winrate;
     }
-    
+    public void setPlayer(String player){
+        this.player = player;
+    }
+
     @Override
     public String toString(){
         String toPrint;

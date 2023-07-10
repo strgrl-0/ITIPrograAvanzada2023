@@ -1,10 +1,10 @@
 package Menu;
 
-public class TopPlayers {
+public class Player {
     private String playername;
     private int score;
 
-    public TopPlayers(String playername, int score){
+    public Player(String playername, int score){
         this.playername = playername;
         this.score = score;
     }
