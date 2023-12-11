@@ -1,0 +1,4 @@
+Juan Pérez,12345678-9,clave123,Usuario
+María González,98765432-1,password456,Usuario
+Pedro Ramirez,87654321-0,secure123,Usuario
+Ana Soto,11111111-2,safe456,Trabajador

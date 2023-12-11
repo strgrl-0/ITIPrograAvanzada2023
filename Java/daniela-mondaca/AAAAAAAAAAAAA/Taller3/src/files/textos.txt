@@ -1,0 +1,4 @@
+1851,235338,Herman  Melville,"Moby  Dick",Libro,Penguin Classics,Aventura,Primera Edición
+1988,010101,Alan Moore,"La Broma Asesina",Comic,DC Comics,Novela Gráfica,Edición Especial
+2022,989898,Juan Pérez,"Apuntes Calculo 1",Apuntes,Matemáticas,Ingeniería Civil Industrial
+2023,223015,John Researcher,"Avances en Inteligencia Artificial",Paper,Inteligencia Artificial,DOI123456789
